@@ -8,9 +8,9 @@
   <!-- Favicons -->
   <link rel="apple-touch-icon" href="{{ asset ('img/apple-icon.png')}}">
   <link rel="icon" href="{{ asset('img/favicon.png')}}">
-  
-  <title> @section('titulo') @show </title>
-
+  <title>
+    Material Dashboard by Creative Tim
+  </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
@@ -19,11 +19,6 @@
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{{ asset('assets-for-demo/demo.css')}}" rel="stylesheet" />
   <!-- iframe removal -->
-
-  @stack('css')
-
-  <link rel="stylesheet" href="{{ asset('css/styles.css')}}">
-
 </head>
 
 <body class="off-canvas-sidebar login-page">
