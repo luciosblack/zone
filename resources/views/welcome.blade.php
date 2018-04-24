@@ -17,9 +17,10 @@
   <link rel="stylesheet" href="{{ asset('css/material-dashboard.css')}}">
   <!-- Documentation extras -->
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="{{ asset('assets-for-demo/demo.css')}}" rel="stylesheet" />
+  <link href="{{ asset('assets-for-demo/demo.css')}}" rel="stylesheet" type="text/css" />
   <!-- iframe removal -->
 
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css')}}">
   @stack('css')
 
   <link rel="stylesheet" href="{{ asset('css/styles.css')}}">
@@ -48,7 +49,7 @@
 <script src="{{ asset ('js/bootstrap-material-design.js')}}"></script>
 <script src="{{ asset ('js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>
 <!--  Google Maps Plugin  -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+{{-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> --}}
 <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
 <script src="{{ asset ('js/plugins/moment.min.js')}}"></script>
 <!--    Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
@@ -95,6 +96,8 @@
 <script src="{{ asset('js/plugins/fullcalendar.min.js')}}"></script>
 <!-- demo init -->
 <script src="{{ asset('js/plugins/demo.js')}}"></script>
+<script type="text/javascript" src="{{ asset('js/css.js')}}"></script>
+<script type="text/javascript" src="{{ asset('js/scripts.js')}}"></script>
 <script type="text/javascript">
   $().ready(function() {
     demo.checkFullPageBackgroundImage();

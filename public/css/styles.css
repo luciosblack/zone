@@ -1,3 +1,53 @@
+/*mapa.mapa***************************************************************/
+
+.card.box {
+	width: 500px;
+	position: relative;
+	padding-left: 5px;
+	padding-right: 5px;
+	left: 0;
+	top: 50%;
+	margin-top: -150px; 
+	z-index: 1;
+}
+
+#teste {
+	position: absolute;
+}
+
+.card.box .card {
+	height: 290px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.roxo {
+	background: linear-gradient(60deg, #3D276B, #7454ba);
+}
+
+.cinza {
+	background: linear-gradient(60deg, #dbdbdb, #ffffff);
+}
+
+.card .card-header-roxo .card-icon,
+.card .card-header-roxo .card-text,
+.card .card-header-roxo:not(.card-header-icon):not(.card-header-text), .card.bg-roxo,
+.card.card-rotate.bg-roxo .front,
+.card.card-rotate.bg-roxo .back {
+  background: linear-gradient(60deg, #3D276B, #7454ba);
+}
+
+.card .card-header-cinza .card-icon,
+.card .card-header-cinza .card-text,
+.card .card-header-cinza:not(.card-header-icon):not(.card-header-text), .card.bg-cinza,
+.card.card-rotate.bg-cinza .front,
+.card.card-rotate.bg-cinza .back {
+  background: linear-gradient(60deg, #918f91, #bdbdbd);
+}
+
+
+/*includes.footer***************************************************************/
+
 footer {
 	z-index: 1;
 }
