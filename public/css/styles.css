@@ -1,25 +1,36 @@
 /*mapa.mapa***************************************************************/
+a.btn.showBox {
+	border-radius: 50px !important;
+}
 
+a.btn.showBox.interno {
+  top: 50%;
+  position: absolute;
+  margin-top: -27px;
+  right: -25px;
+  z-index: -2;
+}
 .card.box {
-	width: 500px;
 	position: relative;
 	padding-left: 5px;
 	padding-right: 5px;
 	left: 0;
 	top: 50%;
-	margin-top: -150px; 
-	z-index: 1;
+	margin-top: -150px;
 }
 
 #teste {
 	position: absolute;
+	display: none;
+	z-index: 11;
 }
 
 .card.box .card {
-	height: 290px;
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
+
+
 
 .roxo {
 	background: linear-gradient(60deg, #3D276B, #7454ba);
