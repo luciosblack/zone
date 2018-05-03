@@ -1,14 +1,16 @@
 $(function(){
 
-	$('.showBox').click(function(e){
+	$('.showHide').click(function(e){
 		event.preventDefault();
 
-		if ($('#teste').hasClass('bounceInLeft')) {
-				$('#teste').removeClass('animated bounceInLeft').addClass('animated bounceOutLeft').addClass('hide');
+		var alvo = $(this).attr("href");
+
+		if ($(alvo).hasClass('puloEmLeft')) {
+				$(alvo).addClass('puloForaLeft').removeClass('puloEmLeft');
 		}
 
 		else {
-			$('#teste').removeClass('animated bounceOutLeft hide').addClass('animated bounceInLeft').show();
+			$(alvo).addClass('puloEmLeft').removeClass('puloForaLeft hide');
 		}
 
 	})
