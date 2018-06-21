@@ -1,4 +1,8 @@
 /*mapa.mapa***************************************************************/
+#map {
+  margin-top: 0;
+}
+
 a.btn.showHide {
 	border-radius: 50px !important;
 }

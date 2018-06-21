@@ -985,7 +985,7 @@ var demo = {
     },
 
     initGoogleMaps: function() {
-        var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
+        var myLatlng = new google.maps.LatLng(-22.782946,-43.431588);
         var mapOptions = {
             zoom: 13,
             center: myLatlng,
@@ -1091,7 +1091,7 @@ var demo = {
     initSmallGoogleMaps: function() {
 
         // Regular Map
-        var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
+        var myLatlng = new google.maps.LatLng(-22.782946,-43.431588);
         var mapOptions = {
             zoom: 8,
             center: myLatlng,
@@ -1109,7 +1109,7 @@ var demo = {
 
 
         // Custom Skin & Settings Map
-        var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
+        var myLatlng = new google.maps.LatLng(-22.782946,-43.431588);
         var mapOptions = {
             zoom: 13,
             center: myLatlng,
@@ -1216,7 +1216,7 @@ var demo = {
 
 
         // Satellite Map
-        var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
+        var myLatlng = new google.maps.LatLng(-22.782946,-43.431588);
         var mapOptions = {
             zoom: 3,
             scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page

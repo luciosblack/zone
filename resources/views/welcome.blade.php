@@ -27,20 +27,27 @@
 
 </head>
 
-<body class="off-canvas-sidebar login-page">
+<body class="off-canvas-sidebar sidebar-mini">
   
-  {{-- Menu Superior --}}
-  @include('includes.layouts.topbar')
+  {{-- Menu Lateral --}}
+  @include('includes.layouts.sidebar')
 
-  <div class="wrapper wrapper-full-page">
+  <div class="main-panel">
+    
+    {{-- Menu Superior --}}
+    @include('includes.layouts.topbar')
 
-    {{-- Conteúdo principal --}}
-    @yield('content')
+    <div id="map" class="wrapper wrapper-full-page">
+
+      {{-- Conteúdo principal --}}
+      {{-- @yield('content') --}}
+
+    </div>
+
+    {{-- Rodapé --}}
+    @include('includes.layouts.footer')
 
   </div>
-
-  {{-- Rodapé --}}
-  @include('includes.layouts.footer')
    
 </body>
 <!--   Core JS Files   -->
@@ -108,5 +115,13 @@
     }, 700)
   });
 </script>
+
+<script>
+  $(document).ready(function() {
+    demo.initGoogleMaps();
+  });
+</script>
+
+@stack('scripts')
 
 </html>

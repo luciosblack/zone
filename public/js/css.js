@@ -15,6 +15,8 @@ $(function(){
 
 	})
 
-	// $('.al.TopCenter')
+	// $('.al.TopCenter').ready(function(){
+		
+	// })
 
 });
