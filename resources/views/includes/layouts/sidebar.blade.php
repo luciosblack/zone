@@ -1,4 +1,4 @@
-<div class="sidebar" data-color="rose" data-background-color="black" data-image="../assets/img/sidebar-1.jpg">
+<div class="sidebar" data-color="rose" data-background-color="black">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -52,7 +52,7 @@
           </div>
         </div>
         <ul class="nav">
-          <li class="nav-item active ">
+          <li class="nav-item">
             <a class="nav-link" href="./dashboard.html">
               <i class="material-icons">dashboard</i>
               <p> Zonas </p>

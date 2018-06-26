@@ -27,28 +27,28 @@
 
 </head>
 
-<body class="off-canvas-sidebar sidebar-mini">
+<body class="sidebar-mini">
   
-  {{-- Menu Lateral --}}
-  @include('includes.layouts.sidebar')
+    {{-- Menu Lateral --}}
+    @include('includes.layouts.sidebar')
 
-  <div class="main-panel">
-    
-    {{-- Menu Superior --}}
-    @include('includes.layouts.topbar')
+    <div class="main-panel">
+      
+      {{-- Menu Superior --}}
+      @include('includes.layouts.topbar')
 
-    <div id="map" class="wrapper wrapper-full-page">
+      <div id="map">
 
-      {{-- Conteúdo principal --}}
-      {{-- @yield('content') --}}
+        {{-- Conteúdo principal --}}
+        {{-- @yield('content') --}}
+
+      </div>
+
+      {{-- Rodapé --}}
+      @include('includes.layouts.footer')
 
     </div>
-
-    {{-- Rodapé --}}
-    @include('includes.layouts.footer')
-
-  </div>
-   
+  
 </body>
 <!--   Core JS Files   -->
 <script src="{{ asset ('js/core/jquery.min.js')}}"></script>
@@ -105,6 +105,7 @@
 <script src="{{ asset('js/plugins/demo.js')}}"></script>
 <script type="text/javascript" src="{{ asset('js/css.js')}}"></script>
 <script type="text/javascript" src="{{ asset('js/scripts.js')}}"></script>
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyDcdW2PsrS1fbsXKmZ6P9Ii8zub5FDu3WQ"></script>
 <script type="text/javascript">
   $().ready(function() {
     demo.checkFullPageBackgroundImage();
