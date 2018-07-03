@@ -1,5 +1,4 @@
-<footer class="footer">
-  <div class="container">
+<footer class="footer roxo">
     <nav class="pull-left">
       <ul>
         <li>
@@ -10,11 +9,13 @@
             </script>, Equipe de Desenvolvimento de Sistemas
           </a>
         </li>
+
         <li>
           <a href="http://tecnologia.mesquita.rj.gov.br">
             Subsecretaria da Tecnologia da Informação - Prefeitura Municipal de Mesquita - RJ
           </a>
         </li>
+
         <li>
           <a href="#">
             Rua Arthur Oliveira Vecchi, 120 -  Centro - Mesquita - RJ - CEP: 26553-080
@@ -22,5 +23,4 @@
         </li>
       </ul>
     </nav>
-  </div>
 </footer>

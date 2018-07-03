@@ -4,21 +4,22 @@
 
         Tip 2: you can also add an image using data-image tag
     -->
-      <div class="logo">
+      {{-- <div class="logo">
         <div class="navbar-minimize">
-        <a href="#" {{-- id="minimizeSidebar" --}} class="simple-text logo-mini">
+        <a href="#" id="minimizeSidebar" class="simple-text logo-mini">
           ZN
         </a>
         </div>
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
           ZONEAMENTO
         </a>
-      </div>
+      </div> --}}
+
       <div class="sidebar-wrapper">
-        <div class="user">
-          <div class="photo" style="border-radius: 21%;">
-            {{-- <img src="../assets/img/faces/avatar.jpg" /> --}}
-            <span class="sidebar-mini" style="color: white;"> LJ </span>
+        
+        {{-- <div class="user">
+          <div class="photo">
+            <img src="/img/faces/avatar.jpg"/>
           </div>
           <div class="user-info">
             <a data-toggle="collapse" href="#collapseExample" class="username">
@@ -50,9 +51,10 @@
               </ul>
             </div>
           </div>
-        </div>
+        </div> --}}
+
         <ul class="nav">
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" href="./dashboard.html">
               <i class="material-icons">dashboard</i>
               <p> Zonas </p>
@@ -94,7 +96,7 @@
               <i class="material-icons">widgets</i>
               <p> Minhas Zonas </p>
             </a>
-          </li>
+          </li> --}}
         </ul>
       </div>
     </div>

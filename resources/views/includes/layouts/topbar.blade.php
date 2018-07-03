@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent" color-on-scroll="500">
+<nav class="navbar navbar-expand-lg navbar-absolute fixed-top roxo" color-on-scroll="500">
   <div class="container-fluid">
     <div class="navbar-wrapper">
       {{-- <div class="navbar-minimize">
@@ -11,7 +11,11 @@
       {{-- <a class="navbar-brand" href="#pablo">Zoneamento</a> --}}
     </div>
 
-    <button class="btn btn-sm navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+    <a href="http://www.mesquita.rj.gov.br/pmm/">
+      <img src="/img/logo-horizontal-360.png">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
       <span class="sr-only">Toggle navigation</span>
       <span class="navbar-toggler-icon icon-bar"></span>
       <span class="navbar-toggler-icon icon-bar"></span>
@@ -20,7 +24,7 @@
 
     <div class="collapse navbar-collapse justify-content-end">
       <form class="navbar-form">
-        <div class="input-group no-border">
+        <div class="input-group has-white">
           <input type="text" value="" class="form-control" placeholder="Pesquisar">
           <button type="submit" class="btn btn-white btn-round btn-just-icon">
             <i class="material-icons">search</i>
@@ -30,11 +34,7 @@
       </form>
 
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a href="lock.html" class="nav-link">
-            <i class="material-icons">lock_open</i> Sair
-          </a>
-        </li>
+        <li class="nav-item"></li>
       </ul>
     </div>
   </div>
