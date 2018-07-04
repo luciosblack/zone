@@ -11,8 +11,8 @@
       {{-- <a class="navbar-brand" href="#pablo">Zoneamento</a> --}}
     </div>
 
-    <a href="http://www.mesquita.rj.gov.br/pmm/">
-      <img src="/img/logo-horizontal-360.png">
+    <a href="http://www.mesquita.rj.gov.br/pmm/" target="_blank">
+      <img class="logo" src="/img/Logotipo-Horizontal-Colorido-PMM.png">
     </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">

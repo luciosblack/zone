@@ -35,6 +35,7 @@
 	padding-top: 0 !important;
 	padding-bottom: 0 !important;
 	pointer-events: auto;
+	text-align: center;
 }
 
 .main-panel {
@@ -47,8 +48,13 @@
 	justify-content: center;
 }
 
-.navbar a img {
-	width: 8em;
+.navbar a img.logo {
+	position: absolute;
+	top: 5px;
+}
+
+.navbar.fixed-top .navbar-toggler .navbar-toggler-icon.icon-bar {
+	background-color: #FFF !important;
 }
 
 .no-padding {
@@ -56,7 +62,7 @@
 }
 
 .roxo {
-	background: linear-gradient(60deg, #3D276B, #7454ba);
+	background: linear-gradient(to right, rgba(61,39,107,1) 0%, rgba(61,39,107,1) 62%, rgba(116,84,186,1) 100%);
 	color: #FFF;
 }
 
@@ -71,12 +77,29 @@
 	.footer a {
 		font-size: 0.6em !important;
 	}
+
+	.navbar a img.logo {
+		left: 5px;
+		width: 10.3em;
+	}
+
+	.off-tablet {
+		display: none !important;
+	}
 }
 
 @media screen and (min-width: 991px) {
 	
 	.footer a {
 		font-size: 0.7em !important;
+	}
+
+	.navbar a img.logo {
+		width: 15em;
+	}
+
+	.off-computer {
+		display: none !important;
 	}
 		
 	/*Manter enquanto o login não for definido*/
