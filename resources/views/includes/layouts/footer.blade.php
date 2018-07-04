@@ -1,4 +1,4 @@
-<footer class="footer roxo">
+<footer class="footer back-roxo">
     <nav class="pull-left">
       <ul>
         <li>

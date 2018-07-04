@@ -1,21 +1,15 @@
 #map {
   overflow: unset !important;
+  margin-top: 83px;
 }
 
-.card .card-header-roxo .card-icon,
-.card .card-header-roxo .card-text,
-.card .card-header-roxo:not(.card-header-icon):not(.card-header-text), .card.bg-roxo,
-.card.card-rotate.bg-roxo .front,
-.card.card-rotate.bg-roxo .back {
-  background: linear-gradient(60deg, #3D276B, #7454ba);
+.back-branco {
+	background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 31%, rgba(250,250,250,1) 100%);
 }
 
-.card .card-header-cinza .card-icon,
-.card .card-header-cinza .card-text,
-.card .card-header-cinza:not(.card-header-icon):not(.card-header-text), .card.bg-cinza,
-.card.card-rotate.bg-cinza .front,
-.card.card-rotate.bg-cinza .back {
-  background: linear-gradient(60deg, #918f91, #bdbdbd);
+.back-roxo {
+	background: linear-gradient(to right, rgba(61,39,107,1) 0%, rgba(61,39,107,1) 62%, rgba(116,84,186,1) 100%);
+	color: #FFF;
 }
 
 .cinza {
@@ -48,25 +42,11 @@
 	justify-content: center;
 }
 
-.navbar a img.logo {
-	position: absolute;
-	top: 5px;
-}
-
-.navbar.fixed-top .navbar-toggler .navbar-toggler-icon.icon-bar {
-	background-color: #FFF !important;
-}
-
 .no-padding {
 	padding: 0 !important;
 }
 
-.roxo {
-	background: linear-gradient(to right, rgba(61,39,107,1) 0%, rgba(61,39,107,1) 62%, rgba(116,84,186,1) 100%);
-	color: #FFF;
-}
-
-.roxo.footer {
+.back-roxo.footer {
 	opacity: 0.7;
 }
 
@@ -79,7 +59,6 @@
 	}
 
 	.navbar a img.logo {
-		left: 5px;
 		width: 10.3em;
 	}
 
@@ -95,7 +74,7 @@
 	}
 
 	.navbar a img.logo {
-		width: 15em;
+		width: 12em;
 	}
 
 	.off-computer {
