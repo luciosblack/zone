@@ -9,7 +9,7 @@ class Uso extends Model
     protected $table = "usos";
 
     protected $filable = [
-        'sigla',
+        'codigo',
         'descricao',
     ];
 

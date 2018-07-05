@@ -17,7 +17,7 @@ class CreateZonasTable extends Migration
             $table->increments('id');
             
             $table->string('nome', '50');
-
+            $table->string('sigla', '10');
             $table->float('testada', 8, 2);
             $table->float('area', 8, 2);
             $table->float('coeficiente_min', 8, 1);

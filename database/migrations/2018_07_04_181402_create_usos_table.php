@@ -16,8 +16,8 @@ class CreateUsosTable extends Migration
         Schema::create('usos', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('sigla' , '5');
-            $table->string('descricao', '50');
+            $table->string('codigo' , '10');
+            $table->string('descricao', '100');
 
             $table->timestamps();
         });
