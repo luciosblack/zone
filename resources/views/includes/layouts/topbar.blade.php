@@ -15,11 +15,11 @@
     <div class="collapse navbar-collapse justify-content-end">
       <form class="navbar-form">
         <div class="input-group has-info">
-          <input type="text" value="" class="form-control" placeholder="Pesquisar">
-          <button type="submit" class="btn btn-info btn-round btn-just-icon">
-            <i class="material-icons">search</i>
+          <input id="address" type="textbox" value="" class="form-control" placeholder="Pesquisar">
+          <input id="submit" value="Geocode" type="button" class="btn btn-info btn-round btn-just-icon">
+            {{-- <i class="material-icons">search</i>
             <div class="ripple-container"></div>
-          </button>
+          </button> --}}
         </div>
       </form>
 
@@ -30,3 +30,4 @@
   </div>
 </nav>
 <!-- End Navbar -->
+
