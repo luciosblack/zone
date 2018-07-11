@@ -37,7 +37,7 @@
 @push('scripts')
 <script type="text/javascript">
 	$(document).ready(function() {
-    	$('#exampleModal').modal('show').modal({backdrop: 'static', keyboard: false});
+    	$('#exampleModal').modal({backdrop: 'static', keyboard: false});
 	})
 </script>
 @endpush
