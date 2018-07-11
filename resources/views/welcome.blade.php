@@ -29,34 +29,33 @@
 
 <body class="sidebar-mini">
   
-    {{-- Menu Lateral --}}
-    @include('includes.layouts.sidebar')
+	{{-- Menu Lateral --}}
+	@include('includes.layouts.sidebar')
 
-    <div class="main-panel">
-      
-      {{-- Menu Superior --}}
-      @include('includes.layouts.topbar')
+	<div class="main-panel">
+	
+		{{-- Menu Superior --}}
+		@include('includes.layouts.topbar')
 
-      <div id="map">
+		<div id="map"></div>
+		
 
-        {{-- Conteúdo principal --}}
-        {{-- @yield('content') --}}
+		{{-- Rodapé --}}
+		@include('includes.layouts.footer')
 
-      </div>
-
-      {{-- Rodapé --}}
-      @include('includes.layouts.footer')
-
-    </div>
-  
+	</div>
 </body>
-<!--  Google Maps Plugin  -->
-{{-- <script src="https://maps.google.com/maps/api/js?key=AIzaSyDcdW2PsrS1fbsXKmZ6P9Ii8zub5FDu3WQ"></script>
- --}}
 
-<script async defer
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcdW2PsrS1fbsXKmZ6P9Ii8zub5FDu3WQ&callback=initMap">
-</script>
+
+
+
+<!--  Google Maps Plugin  -->
+
+<script type="text/javascript" src="{{ asset('js/scripts.js')}}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD88keSNZva3fJ2F01M6YOw78uf3xrtU1I&libraries=places&callback=initMap"
+	async defer></script>
+
+
 
 <!--   Core JS Files   -->
 <script src="{{ asset ('js/core/jquery.min.js')}}"></script>
@@ -108,7 +107,7 @@
 <script src="{{ asset('js/plugins/jasny-bootstrap.min.js')}}"></script>
 <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
 <script src="{{ asset('js/plugins/fullcalendar.min.js')}}"></script>
-<script type="text/javascript" src="{{ asset('js/scripts.js')}}"></script>
+
 <script src="{{ asset("js/geoxml3/polys/geoxml3.js") }}" type="text/javascript"></script>
 
 @stack('scripts')
