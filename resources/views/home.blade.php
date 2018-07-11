@@ -37,12 +37,12 @@
       {{-- Menu Superior --}}
       @include('includes.layouts.topbar')
 
-      <div id="map">
+      <div id="map"></div>
+      
+      {{-- Conteúdo principal --}}
+      @yield('content')
 
-        {{-- Conteúdo principal --}}
-        @yield('content')
-
-      </div>
+      
 
       {{-- Rodapé --}}
       @include('includes.layouts.footer')
