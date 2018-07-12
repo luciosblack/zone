@@ -2,48 +2,53 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" href="{{ asset ('img/apple-icon.png')}}">
-  <link rel="icon" href="{{ asset('img/favicon.png')}}">
+  	<meta charset="utf-8">
+  	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  	<!-- Favicons -->
+  	<link rel="apple-touch-icon" href="{{ asset ('img/apple-icon.png')}}">
+  	<link rel="icon" href="{{ asset('img/favicon.png')}}">
   
-  <title> @section('titulo') @show </title>
+  	<title> @section('titulo') @show </title>
 
-  <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="{{ asset('css/material-dashboard.css')}}">
-  <!-- Documentation extras -->
-  <!-- CSS Just for demo purpose, dont include it in your project -->
-  <link href="{{ asset('assets-for-demo/demo.css')}}" rel="stylesheet" type="text/css" />
-  <!-- iframe removal -->
+  	<!--     Fonts and icons     -->
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+  	<link rel="stylesheet" href="{{ asset('css/material-dashboard.css')}}">
+  	<!-- Documentation extras -->
+  	<!-- CSS Just for demo purpose, dont include it in your project -->
+  	<link href="{{ asset('assets-for-demo/demo.css')}}" rel="stylesheet" type="text/css" />
+  	<!-- iframe removal -->
 
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css')}}">
-  @stack('css')
+  	<link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css')}}">
+  	@stack('css')
 
-  <link rel="stylesheet" href="{{ asset('css/styles.css')}}">
+  	<link rel="stylesheet" href="{{ asset('css/styles.css')}}">
 
 </head>
 
 <body class="sidebar-mini">
   
-	{{-- Menu Lateral --}}
-	@include('includes.layouts.sidebar')
+  	{{-- Menu Lateral --}}
+  	@include('includes.layouts.sidebar')
 
-	<div class="main-panel">
-	
-		{{-- Menu Superior --}}
-		@include('includes.layouts.topbar')
+  	<div class="main-panel">
+  
+	 	{{-- Menu Superior --}}
+	 	@include('includes.layouts.topbar')
 
-		<div id="map"></div>
-		
+	 <div id="map"></div>
+	 
+	 <div id="infowindow-content">
+		<img src="" width="16" height="16" id="place-icon">
+		<span id="place-name"  class="title"></span><br>
+		<span id="place-address"></span>
+	 </div>
+	 
+	 {{-- Rodapé --}}
+	 @include('includes.layouts.footer')
 
-		{{-- Rodapé --}}
-		@include('includes.layouts.footer')
-
-	</div>
+  </div>
 </body>
 
 
@@ -53,7 +58,7 @@
 
 <script type="text/javascript" src="{{ asset('js/scripts.js')}}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD88keSNZva3fJ2F01M6YOw78uf3xrtU1I&libraries=places&callback=initMap"
-	async defer></script>
+  async defer></script>
 
 
 
