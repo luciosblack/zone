@@ -40,7 +40,7 @@
       <div id="map"></div>
       
       {{-- Conteúdo principal --}}
-      @yield('content')
+      <div id="content"> @yield('content') </div>
 
       
 

@@ -1,4 +1,4 @@
-@extends('layouts.material')
+@extends('home')
 
 @section('titulo')
 
