@@ -61,6 +61,9 @@
   
 </body>
 
+<!-- Script de mapeamento-->
+<script src="{{ asset("js/geoxml3/polys/geoxml3.js") }}" type="text/javascript"></script>
+
 <!--  Google Maps Plugin  -->
 
 <script type="text/javascript" src="{{ asset('js/scripts.js')}}"></script>
@@ -119,8 +122,6 @@
 <script src="{{ asset('js/plugins/jasny-bootstrap.min.js')}}"></script>
 <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
 <script src="{{ asset('js/plugins/fullcalendar.min.js')}}"></script>
-
-<script src="{{ asset("js/geoxml3/polys/geoxml3.js") }}" type="text/javascript"></script>
 
 @stack('scripts')
 
