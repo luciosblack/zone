@@ -1,13 +1,3 @@
-@extends('home')
-
-@section('titulo')
-
-	Bem vindo
-
-@endsection
-
-@section('content')
-
 <!-- Modal Bem-vindo -->
 <div class="modal fade" id="modalWelcome" tabindex="-1" role="dialog" aria-labelledby="modalWelcomeTitle" aria-hidden="true">
   <div class="modal-dialog " role="document">
@@ -33,8 +23,6 @@
 </div>
 
 @include('includes.termos')
-
-@endsection
 
 @push('scripts')
 <script type="text/javascript">

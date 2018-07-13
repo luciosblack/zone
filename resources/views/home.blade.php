@@ -41,9 +41,13 @@
       <div id="map"></div>
       
       {{-- Conteúdo principal --}}
-      <div id="content"> @yield('content') </div>
+      <div id="content"> 
 
-      
+        @include('includes.welcome')
+
+        @yield('content')
+
+      </div>      
 
       {{-- Rodapé --}}
       @include('includes.layouts.footer')
