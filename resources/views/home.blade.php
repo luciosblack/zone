@@ -8,7 +8,7 @@
   <!-- Favicons -->
   <link rel="apple-touch-icon" href="{{ asset ('img/apple-icon.png')}}">
   <link rel="icon" href="{{ asset('img/favicon.png')}}">
-  
+
   <title> @section('titulo') @show </title>
 
   <!--     Fonts and icons     -->
@@ -16,12 +16,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
   <link rel="stylesheet" href="{{ asset('css/material-dashboard.css')}}">
   <!-- Documentation extras -->
-  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <!-- CSS Just for demo purpose, dont include it in your project -->
   <link href="{{ asset('assets-for-demo/demo.css')}}" rel="stylesheet" type="text/css" />
   <!-- iframe removal -->
 
   <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css')}}">
-  
   @stack('css')
 
   <link rel="stylesheet" href="{{ asset('css/styles.css')}}">
@@ -47,7 +46,13 @@
 
         @yield('content')
 
-      </div>      
+      </div>
+
+      <div id="infowindow-content">
+        <img src="" width="16" height="16" id="place-icon">
+        <span id="place-name"  class="title"></span><br>
+        <span id="place-address"></span>
+      </div>
 
       {{-- Rodapé --}}
       @include('includes.layouts.footer')
@@ -55,13 +60,21 @@
     </div>
   
 </body>
+
+<!--  Google Maps Plugin  -->
+
+<script type="text/javascript" src="{{ asset('js/scripts.js')}}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD88keSNZva3fJ2F01M6YOw78uf3xrtU1I&libraries=places&callback=initMap"
+  async defer></script>
+
+
+
 <!--   Core JS Files   -->
 <script src="{{ asset ('js/core/jquery.min.js')}}"></script>
 <script src="{{ asset ('js/core/popper.min.js')}}"></script>
 <script src="{{ asset ('js/bootstrap-material-design.js')}}"></script>
 <script src="{{ asset ('js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>
-<!--  Google Maps Plugin  -->
-<script src="https://maps.google.com/maps/api/js?key=AIzaSyDcdW2PsrS1fbsXKmZ6P9Ii8zub5FDu3WQ"></script>
+
 <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
 <script src="{{ asset ('js/plugins/moment.min.js')}}"></script>
 <!--    Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
@@ -106,24 +119,8 @@
 <script src="{{ asset('js/plugins/jasny-bootstrap.min.js')}}"></script>
 <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
 <script src="{{ asset('js/plugins/fullcalendar.min.js')}}"></script>
-<!-- demo init -->
-<script src="{{ asset('js/plugins/demo.js')}}"></script>
-<script type="text/javascript" src="{{ asset('js/scripts.js')}}"></script>
+
 <script src="{{ asset("js/geoxml3/polys/geoxml3.js") }}" type="text/javascript"></script>
-<script type="text/javascript">
-  $().ready(function() {
-    demo.checkFullPageBackgroundImage();
-
-    setTimeout(function() {
-      // after 1000 ms we add the class animated to the login/register card
-      $('.card').removeClass('card-hidden');
-    }, 700)
-  });
-</script>
-
-<script>
-
-</script>
 
 @stack('scripts')
 
