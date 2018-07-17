@@ -9,6 +9,7 @@ function initMap() {
 
 	var topBar = document.getElementById('top-bar');
 	var input = document.getElementById('pac-input');
+	var modalInfo = document.getElementById('modalInfo');
 	//var types = document.getElementById('type-selector');
 	//var strictBounds = document.getElementById('strict-bounds-selector');
 

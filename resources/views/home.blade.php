@@ -40,19 +40,25 @@
       <div id="map"></div>
       
       {{-- Conteúdo principal --}}
-      <div id="content"> 
+      <div id="modal"> 
 
-        @include('includes.welcome')
+        @include('includes.modal.welcome')
+        @include('includes.modal.termos')
+        @include('includes.modal.info')
+
+      </div>
+
+      <div id="content">
 
         @yield('content')
 
       </div>
 
-      <div id="infowindow-content">
+      <button class="btn btn-sm btn-link" id="infowindow-content">
         <img src="" width="16" height="16" id="place-icon">
         <span id="place-name"  class="title"></span><br>
         <span id="place-address"></span>
-      </div>
+      </button>
 
       {{-- Rodapé --}}
       @include('includes.layouts.footer')
@@ -66,9 +72,9 @@
 
 <!--  Google Maps Plugin  -->
 
-<script type="text/javascript" src="{{ asset('js/scripts.js')}}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD88keSNZva3fJ2F01M6YOw78uf3xrtU1I&libraries=places&callback=initMap"
   async defer></script>
+<script type="text/javascript" src="{{ asset('js/scripts.js')}}"></script>
 
 
 
