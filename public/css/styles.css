@@ -3,6 +3,10 @@
   margin-top: 0 !important;
 }
 
+#top-bar {
+	left: 0!important;
+}
+
 /*#top-bar {
 	display: none!important;
 }*/
@@ -34,6 +38,10 @@
 	padding-bottom: 0 !important;
 	pointer-events: auto;
 	text-align: center;
+}
+
+.hide {
+	display: none!important;
 }
 
 .main-panel {
