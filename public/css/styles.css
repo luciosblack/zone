@@ -3,6 +3,15 @@
   margin-top: 0 !important;
 }
 
+#modalInfo .modal-header {
+	font-size: 0.6rem;
+	line-height: 1rem;
+}
+
+#modalInfo .modal-header img {
+	width: 3rem;
+}
+
 #top-bar {
 	left: 0!important;
 }
@@ -22,6 +31,10 @@
 
 .cinza {
 	background: linear-gradient(60deg, #dbdbdb, #ffffff);
+}
+
+.item-start {
+	align-items: flex-start !important;
 }
 
 .footer {
