@@ -1,0 +1,59 @@
+body {
+	font-size: 0.700rem;
+	letter-spacing: 0.1em
+}
+img {
+	width: 3rem;
+}
+
+.card .card-header p {
+	font-size: 0.600rem !important;
+}
+
+.card .card-header .category {
+	margin-bottom: 0 !important;
+}
+
+.card-footer.text-muted p {
+	font-size: 0.650rem;
+}
+
+.card-body h4.card-header {
+	font-weight: bold;
+	font-size: 0.800rem;
+}
+
+.col-sm-offset-1{
+	margin-left:8.33333333%;
+}
+
+.printBG-neutral {
+	background-color:#EEE !important;
+}
+
+.table {
+	margin-top: 1rem;
+}
+
+.table tbody tr td, .table thead tr.branco>th{
+	border-color: #FFF !important;
+}
+
+.table th, .table td {
+	font-size: 0.800rem !important;
+}
+
+.table th {
+	padding: 5px !important;
+}
+
+.table td {
+	padding: 6px 8px !important;
+}
+
+@media print {
+	.printBG-neutral {
+		background-color:#EEE !important;
+		-webkit-print-color-adjust: exact;
+	}
+}

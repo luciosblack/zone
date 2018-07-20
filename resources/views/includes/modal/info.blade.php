@@ -19,11 +19,11 @@
 					<div class="tab-content tab-space">
 				    <div class="tab-pane active" id="link1" aria-expanded="true">
 			    		<div class="table-responsive">
-				    		<table class="table table-hover table-sm">
+				    		<table class="table table-hover table-condensed">
 				    			<thead>
 				    				<tr>
 				    					<th>Zona</th>
-				    					<th class="text-right">A.O.P.1</th>
+				    					<th>A.O.P.1</th>
 				    					<th class>ÁREA DE OCUPAÇÃO PRIORITÁRIA 1</th>
 				    				</tr>
 				    			</thead>
@@ -31,12 +31,12 @@
 				    				<tr>
 				    					<td>R1</td>
 				    					<td>Residencial Unifamiliar</td>
-				    					<td class="text-right">Tolerado</td>
+				    					<td class="text-center">Tolerado</td>
 				    				</tr>
 				    				<tr>
 				    					<td>R1</td>
 				    					<td>Residencial Unifamiliar</td>
-				    					<td class="text-right">Tolerado</td>
+				    					<td class="text-center">Tolerado</td>
 				    				</tr>
 				    			</tbody>
 				    		</table>
@@ -44,17 +44,17 @@
 						</div>
 						<div class="tab-pane" id="link2" aria-expanded="true">
 							<div class="table-responsive">
-				    		<table class="table table-hover table-sm">
+				    		<table class="table table-hover table-condensed">
 				    			<tbody>
 				    				<tr>
 				    					<td></td>
-				    					<td>Testada Mínima</td>
-				    					<td>10,00 metros</td>
+				    					<td class="text-left">Testada Mínima</td>
+				    					<td class="text-right">10,00 metros</td>
 				    				</tr>
 				    				<tr>
 				    					<td></td>
-				    					<td>Área Total Mínima do Lote</td>
-				    					<td>125,00 m² cada lote</td>
+				    					<td class="text-left">Área Total Mínima do Lote</td>
+				    					<td class="text-right">125,00 m² cada lote</td>
 				    				</tr>
 				    			</tbody>
 				    		</table>
@@ -65,7 +65,7 @@
 	      
 	      <div class="modal-footer d-flex">
 	        <button class="btn btn-primary btn-link" data-dismiss="modal">Fechar</button>
-	        <a href="#" target="_blank" class="btn btn-primary btn-link ml-auto">Imprimir</a>
+	        <a href="relatorio" target="_blank" class="btn btn-primary btn-link ml-auto">Imprimir</a>
 	      </div>
 
 	    </div> {{-- Fim modal-content --}}
