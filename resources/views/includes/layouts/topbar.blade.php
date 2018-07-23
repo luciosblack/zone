@@ -13,15 +13,11 @@
  	</button>
 
  	<div class="collapse navbar-collapse justify-content-end">
-    <form class="navbar-form">
+    <div class="navbar-form">
       <div id="pac-card" class="input-group has-info">
-        <input id="pac-input" type="text" class="form-control" placeholder="Digite o endereço">
-        <button type="submit" class="btn btn-info btn-round btn-just-icon">
-          <i class="material-icons">search</i>
-          <div class="ripple-container"></div>
-        </button>
+        <input id="pac-input" type="text" class="form-control" placeholder="Informe o endereço">
       </div>
-    </form>
+    </diwv>
 
     <ul class="navbar-nav">
       <li class="nav-item"></li>
@@ -30,3 +26,6 @@
 </nav>
 <!-- End Navbar -->
 
+@push('scripts')
+
+@endpush

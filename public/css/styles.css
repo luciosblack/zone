@@ -1,3 +1,21 @@
+/* Alterar a cor do placheholder para ter mais destaque*/
+::placeholder {
+    color: #3D276B !important;
+    opacity: 1; /* Firefox */
+    text-align: center !important;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #3D276B !important;
+   text-align: center !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+   color: #3D276B !important;
+   text-align: center !important;
+}
+/**************************************/
+
 #map {
   overflow: unset !important;
   margin-top: 0 !important;
@@ -194,4 +212,20 @@
 	font-size: 25px;
 	font-weight: 500;
 	padding: 6px 12px;
+}
+
+::-webkit-input-placeholder {
+   color: red;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: red;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: red;  
+}
+
+:-ms-input-placeholder {  
+   color: red;  
 }
