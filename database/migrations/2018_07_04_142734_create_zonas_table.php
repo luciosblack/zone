@@ -16,17 +16,17 @@ class CreateZonasTable extends Migration
         Schema::create('zonas', function (Blueprint $table) {
             $table->increments('id');
             
-            $table->string('nome', '50');
-            $table->string('sigla', '10');
-            $table->float('testada', 8, 2);
-            $table->float('area', 8, 2);
-            $table->float('coeficiente_min', 8, 1);
-            $table->float('coeficiente_bas', 8, 1);
-            $table->float('coeficiente_max', 8, 1);
-            $table->float('afastamento', 8, 2);
-            $table->string('tx_ocupacao', 10);
-            $table->string('tx_permeabilidade', 10);
-            $table->string('vagas_estacionamento', 10);
+            $table->string('nome',                  '50');
+            $table->string('sigla',                 '20');
+            $table->string('testada',               '20');
+            $table->string('area',                  '20');
+            $table->string('coeficiente_min',       '20');
+            $table->string('coeficiente_bas',       '20');
+            $table->string('coeficiente_max',       '20');
+            $table->string('afastamento',           '20');
+            $table->string('tx_ocupacao',           '20');
+            $table->string('tx_permeabilidade',     '20');
+            $table->string('vagas_estacionamento',  '20');
 
 
             $table->timestamps();

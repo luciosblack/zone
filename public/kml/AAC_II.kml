@@ -43,7 +43,7 @@
 		</PolyStyle>
 	</Style>
 	<Placemark>
-		<name>AAC b</name>
+		<name>AAC_II</name>
 		<styleUrl>#msn_ylw-pushpin</styleUrl>
 		<Polygon>
 			<tessellate>1</tessellate>

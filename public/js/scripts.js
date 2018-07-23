@@ -1,10 +1,12 @@
+let url_base = "{{ url(" / ") }}";
+
 // Polígonos das áreas da cidade
-let pol_AAC;
-let pol_AAC_b;
+let pol_AAC_I;
+let pol_AAC_II;
 let pol_AOP_I;
 let pol_AOP_II;
-let pol_ARA;
-let pol_ARA_b;
+let pol_ARA_I;
+let pol_ARA_II;
 let pol_MACROZONA_ambiental;
 let pol_MACROZONA_rural;
 let area_pesquisada;
@@ -14,37 +16,37 @@ function initMap() {
 		center: { lat: -22.782946, lng: -43.431588},
 		zoom: 13,
 		mapTypeControl: false,
-		scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
+		scrollwheel: true, //we disable de scroll over the map, it is a really annoing when you scroll through page
 		styles: [{"featureType":"water","stylers":[{"saturation":43},{"lightness":-11},{"hue":"#0088ff"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"hue":"#ff0000"},{"saturation":-100},{"lightness":99}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"color":"#808080"},{"lightness":54}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ece2d9"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#ccdca1"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#767676"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","stylers":[{"visibility":"off"}]},{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#b8cb93"}]},{"featureType":"poi.park","stylers":[{"visibility":"on"}]},{"featureType":"poi.sports_complex","stylers":[{"visibility":"on"}]},{"featureType":"poi.medical","stylers":[{"visibility":"on"}]},{"featureType":"poi.business","stylers":[{"visibility":"simplified"}]}]
 	});
 
 	//////////////////////////////////Camada de Zoneamento
 
-	// AAC
-	var geoXmlAAC = new geoXML3.parser({
+	// AAC_I
+	var geoXmlAAC_I = new geoXML3.parser({
 		map: map,
 		zoom: false,
 		createPolygon: addPolygonAAC,
 	});
 
 	function addPolygonAAC(placemark) {
-		pol_AAC = geoXmlAAC.createPolygon(placemark);
-		return pol_AAC;
+		pol_AAC_I = geoXmlAAC_I.createPolygon(placemark);
+		return pol_AAC_I;
 	}
-	geoXmlAAC.parse('kml/AAC.kml');
+	geoXmlAAC_I.parse('kml/AAC_I.kml');
 
-	// AAC_b
-	var geoXmlAAC_b = new geoXML3.parser({
+	// AAC_II
+	var geoXmlAAC_II = new geoXML3.parser({
 		map: map,
 		zoom: false,
-		createPolygon: addPolygonAAC_b,
+		createPolygon: addPolygonAAC_II,
 	});
 
-	function addPolygonAAC_b(placemark) {
-		pol_AAC_b = geoXmlAAC_b.createPolygon(placemark);
-		return pol_AAC_b;
+	function addPolygonAAC_II(placemark) {
+		pol_AAC_II = geoXmlAAC_II.createPolygon(placemark);
+		return pol_AAC_II;
 	}
-	geoXmlAAC_b.parse('kml/AAC_b.kml');
+	geoXmlAAC_II.parse('kml/AAC_II.kml');
 
 	// AOP_I
 	var geoXmlAOP_I = new geoXML3.parser({
@@ -72,31 +74,31 @@ function initMap() {
 	}
 	geoXmlAOP_II.parse('kml/AOP_II.kml');
 
-	// ARA
-	var geoXmlARA = new geoXML3.parser({
+	// ARA_I
+	var geoXmlARA_I = new geoXML3.parser({
 		map: map,
 		zoom: false,
-		createPolygon: addPolygonARA,
+		createPolygon: addPolygonARA_I,
 	});
 
-	function addPolygonARA(placemark) {
-		pol_ARA = geoXmlARA.createPolygon(placemark);
-		return pol_ARA;
+	function addPolygonARA_I(placemark) {
+		pol_ARA_I = geoXmlARA_I.createPolygon(placemark);
+		return pol_ARA_I;
 	}
-	geoXmlARA.parse('kml/ARA.kml');
+	geoXmlARA_I.parse('kml/ARA_I.kml');
 
-	// ARA_b
-	var geoXmlARA_b = new geoXML3.parser({
+	// ARA_II
+	var geoXmlARA_II = new geoXML3.parser({
 		map: map,
 		zoom: false,
-		createPolygon: addPolygonARA_b,
+		createPolygon: addPolygonARA_II,
 	});
 
-	function addPolygonARA_b(placemark) {
-		pol_ARA_b = geoXmlARA_b.createPolygon(placemark);
-		return pol_ARA_b;
+	function addPolygonARA_II(placemark) {
+		pol_ARA_II = geoXmlARA_II.createPolygon(placemark);
+		return pol_ARA_II;
 	}
-	geoXmlARA_b.parse('kml/ARA_b.kml');
+	geoXmlARA_II.parse('kml/ARA_II.kml');
 
 	// MACROZONA_ambiental
 	var geoXmlMACROZONA_ambiental = new geoXML3.parser({
@@ -173,11 +175,11 @@ function initMap() {
 		}
 		
 		////////////////////////////////////////////////// Preencher a variável "area_pesquisada"
-		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_AAC)){
-			area_pesquisada = "AAC";
+		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_AAC_I)){
+			area_pesquisada = "AAC_I";
 		}
-		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_AAC_b)){
-			area_pesquisada = "AAC_b";
+		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_AAC_II)){
+			area_pesquisada = "AAC_II";
 		}
 		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_AOP_I)){
 			area_pesquisada = "AOP_I";
@@ -185,11 +187,11 @@ function initMap() {
 		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_AOP_II)){
 			area_pesquisada = "AOP_II";
 		}
-		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_ARA)){
-			area_pesquisada = "ARA";
+		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_ARA_I)){
+			area_pesquisada = "ARA_I";
 		}
-		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_ARA_b)){
-			area_pesquisada = "ARA_b";
+		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_ARA_II)){
+			area_pesquisada = "ARA_II";
 		}
 		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_MACROZONA_ambiental)){
 			area_pesquisada = "MACROZONA_ambiental";
@@ -198,6 +200,7 @@ function initMap() {
 			area_pesquisada = "MACROZONA_rural";
 		}
 
+		
 
 		// If the place has a geometry, then present it on a map.
 		if (place.geometry.viewport) {

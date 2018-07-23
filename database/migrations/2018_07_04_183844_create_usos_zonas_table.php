@@ -20,8 +20,8 @@ class CreateUsosZonasTable extends Migration
 
 
             //------------------------FOREIGN--------------------------------
-            $table->integer('zonas_id')->unsigned();
-            $table->integer('usos_id')->unsigned();
+            $table->integer('zona_id')->unsigned();
+            $table->integer('uso_id')->unsigned();
             //---------------------------------------------------------------
 
             $table->timestamps();
@@ -36,8 +36,8 @@ class CreateUsosZonasTable extends Migration
         ");
 
         Schema::table('usos_zonas', function($table){
-            $table->foreign('zonas_id')->references('id')->on('zonas')->onDelete('cascade');
-            $table->foreign('usos_id')->references('id')->on('usos')->onDelete('cascade');
+            $table->foreign('zona_id')->references('id')->on('zonas')->onDelete('cascade');
+            $table->foreign('uso_id')->references('id')->on('usos')->onDelete('cascade');
         });
     }
 

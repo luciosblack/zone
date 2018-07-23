@@ -13,7 +13,7 @@
  	</button>
 
  	<div class="collapse navbar-collapse justify-content-end">
-    <form class="navbar-form">
+    <div class="navbar-form">
       <div id="pac-card" class="input-group has-info">
         <input id="pac-input" type="text" class="form-control" placeholder="Digite o endereço">
         <button type="submit" class="btn btn-info btn-round btn-just-icon">
@@ -21,7 +21,7 @@
           <div class="ripple-container"></div>
         </button>
       </div>
-    </form>
+    </div>
 
     <ul class="navbar-nav">
       <li class="nav-item"></li>

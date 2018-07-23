@@ -17,6 +17,6 @@ class Uso extends Model
 
     public function zonas()
     {
-        return $this->belongsToMany('App\Models\Zona', 'usos_zonas');
+        return $this->belongsToMany('App\Models\Zona', 'usos_zonas')->withPivot('uso');
     }   
 }
