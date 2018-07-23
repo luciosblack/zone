@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Zona;
 
 class ZonasSeeder extends Seeder
 {
@@ -12,8 +13,8 @@ class ZonasSeeder extends Seeder
     public function run()
     {
 		
-		DB::table('zonas')->insert([	'nome'						=> 'Área de Ocupação Prioritária 1',
-												'sigla'						=> 'AOP1',
+		DB::table('zonas')->insert([	'nome'						=> 'Área de Ocupação Prioritária I',
+												'sigla'						=> 'AOP_I',
 												'testada'					=> '10',
 												'area'						=> '125',
 												'coeficiente_min'			=> '0.4',
@@ -25,8 +26,8 @@ class ZonasSeeder extends Seeder
 												'vagas_estacionamento'	=> '1/50m2',
 											]);
 
-		DB::table('zonas')->insert([	'nome'						=> 'Área de Ocupação Prioritária 2',
-												'sigla'						=> 'AOP2',
+		DB::table('zonas')->insert([	'nome'						=> 'Área de Ocupação Prioritária II',
+												'sigla'						=> 'AOP_II',
 												'testada'					=> '20',
 												'area'						=> '1000',
 												'coeficiente_min'			=> '0.3',
@@ -38,8 +39,8 @@ class ZonasSeeder extends Seeder
 												'vagas_estacionamento'	=> '1/100m2',
 											]);											
 
-		DB::table('zonas')->insert([	'nome'						=> 'Área de Adensamento Controlado',
-												'sigla'						=> 'AAC',
+		DB::table('zonas')->insert([	'nome'						=> 'Área de Adensamento Controlado I',
+												'sigla'						=> 'AAC_a',
 												'testada'					=> '10',
 												'area'						=> '125',
 												'coeficiente_min'			=> '0.3',
@@ -51,8 +52,35 @@ class ZonasSeeder extends Seeder
 												'vagas_estacionamento'	=> '1/50m2',
 											]);
 
-		DB::table('zonas')->insert([	'nome'						=> 'Área de Restrição ao Adensamento',
-												'sigla'						=> 'ARA',
+		DB::table('zonas')->insert([	'nome'						=> 'Área de Adensamento Controlado II',
+												'sigla'						=> 'AAC_b',
+												'testada'					=> '10',
+												'area'						=> '125',
+												'coeficiente_min'			=> '0.3',
+												'coeficiente_bas'			=> '1.0',
+												'coeficiente_max'			=> '4.0',
+												'afastamento'				=> '3.0',
+												'tx_ocupacao'				=> '70%',
+												'tx_permeabilidade'		=> '20%',
+												'vagas_estacionamento'	=> '1/50m2',
+											]);
+
+
+		DB::table('zonas')->insert([	'nome'						=> 'Área de Restrição ao Adensamento I',
+												'sigla'						=> 'ARA_a',
+												'testada'					=> '10',
+												'area'						=> '125',
+												'coeficiente_min'			=> '0.2',
+												'coeficiente_bas'			=> '1.0',
+												'coeficiente_max'			=> '3.0',
+												'afastamento'				=> '4.0',
+												'tx_ocupacao'				=> '70%',
+												'tx_permeabilidade'		=> '20%',
+												'vagas_estacionamento'	=> '1/50m2',
+											]);
+
+		DB::table('zonas')->insert([	'nome'						=> 'Área de Restrição ao Adensamento II',
+												'sigla'						=> 'ARA_b',
 												'testada'					=> '10',
 												'area'						=> '125',
 												'coeficiente_min'			=> '0.2',

@@ -16,7 +16,7 @@ class UsosZonasSeeder extends Seeder
     public function run()
     {
         
-        $zonaID = Zona::where('sigla', '=', 'AOP1')->first()->id; 
+        $zonaID = Zona::where('sigla', '=', 'AOP_I')->first()->id; 
 
         // $usoID  = Uso::where('codigo', '=', 'R1')->first()->id;
         $usoID = 1;
@@ -54,7 +54,7 @@ class UsosZonasSeeder extends Seeder
             DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P']); $usoID++;
 
 
-        $zonaID = Zona::where('sigla', '=', 'AOP2')->first()->id; 
+        $zonaID = Zona::where('sigla', '=', 'AOP_II')->first()->id; 
         $usoID = 1;
             DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P' ]); $usoID++;
             DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P' ]); $usoID++;
@@ -90,7 +90,7 @@ class UsosZonasSeeder extends Seeder
             DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P' ]); $usoID++;
 
 
-        $zonaID = Zona::where('sigla', '=', 'AAC')->first()->id; 
+        $zonaID = Zona::where('sigla', '=', 'AAC_a')->first()->id; 
         $usoID = 1;
             DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
             DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
@@ -125,7 +125,42 @@ class UsosZonasSeeder extends Seeder
             DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P' ]); $usoID++;
             DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P' ]); $usoID++;
 
-        $zonaID = Zona::where('sigla', '=', 'ARA')->first()->id; 
+        $zonaID = Zona::where('sigla', '=', 'AAC_b')->first()->id; 
+        $usoID = 1;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P' ]); $usoID++;
+
+        $zonaID = Zona::where('sigla', '=', 'ARA_a')->first()->id; 
         $usoID = 1;
 
             DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
@@ -161,5 +196,41 @@ class UsosZonasSeeder extends Seeder
             DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P' ]); $usoID++;
             DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P' ]); $usoID++;
 
+
+        $zonaID = Zona::where('sigla', '=', 'ARA_b')->first()->id; 
+        $usoID = 1;
+
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'T' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'A' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P' ]); $usoID++;
+            DB::table('usos_zonas')->insert(['zonas_id' => $zonaID ,'usos_id' => $usoID, 'uso' => 'P' ]); $usoID++;
     }
 }

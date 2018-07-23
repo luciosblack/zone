@@ -1,14 +1,128 @@
+// Polígonos das áreas da cidade
+let pol_AAC;
+let pol_AAC_b;
+let pol_AOP_I;
+let pol_AOP_II;
+let pol_ARA;
+let pol_ARA_b;
+let pol_MACROZONA_ambiental;
+let pol_MACROZONA_rural;
+let area_pesquisada;
 
-// This example requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
-// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
- 
 function initMap() {
 	var map = new google.maps.Map(document.getElementById('map'), {
 		center: { lat: -22.782946, lng: -43.431588},
 		zoom: 13,
 		mapTypeControl: false,
 	});
+
+	//////////////////////////////////Camada de Zoneamento
+
+	// AAC
+	var geoXmlAAC = new geoXML3.parser({
+		map: map,
+		zoom: false,
+		createPolygon: addPolygonAAC,
+	});
+
+	function addPolygonAAC(placemark) {
+		pol_AAC = geoXmlAAC.createPolygon(placemark);
+		return pol_AAC;
+	}
+	geoXmlAAC.parse('kml/AAC.kml');
+
+	// AAC_b
+	var geoXmlAAC_b = new geoXML3.parser({
+		map: map,
+		zoom: false,
+		createPolygon: addPolygonAAC_b,
+	});
+
+	function addPolygonAAC_b(placemark) {
+		pol_AAC_b = geoXmlAAC_b.createPolygon(placemark);
+		return pol_AAC_b;
+	}
+	geoXmlAAC_b.parse('kml/AAC_b.kml');
+
+	// AOP_I
+	var geoXmlAOP_I = new geoXML3.parser({
+		map: map,
+		zoom: false,
+		createPolygon: addPolygonAOP_I,
+	});
+
+	function addPolygonAOP_I(placemark) {
+		pol_AOP_I = geoXmlAOP_I.createPolygon(placemark);
+		return pol_AOP_I;
+	}
+	geoXmlAOP_I.parse('kml/AOP_I.kml');
+
+	// AOP_II
+	var geoXmlAOP_II = new geoXML3.parser({
+		map: map,
+		zoom: false,
+		createPolygon: addPolygonAOP_II,
+	});
+
+	function addPolygonAOP_II(placemark) {
+		pol_AOP_II = geoXmlAOP_II.createPolygon(placemark);
+		return pol_AOP_II;
+	}
+	geoXmlAOP_II.parse('kml/AOP_II.kml');
+
+	// ARA
+	var geoXmlARA = new geoXML3.parser({
+		map: map,
+		zoom: false,
+		createPolygon: addPolygonARA,
+	});
+
+	function addPolygonARA(placemark) {
+		pol_ARA = geoXmlARA.createPolygon(placemark);
+		return pol_ARA;
+	}
+	geoXmlARA.parse('kml/ARA.kml');
+
+	// ARA_b
+	var geoXmlARA_b = new geoXML3.parser({
+		map: map,
+		zoom: false,
+		createPolygon: addPolygonARA_b,
+	});
+
+	function addPolygonARA_b(placemark) {
+		pol_ARA_b = geoXmlARA_b.createPolygon(placemark);
+		return pol_ARA_b;
+	}
+	geoXmlARA_b.parse('kml/ARA_b.kml');
+
+	// MACROZONA_ambiental
+	var geoXmlMACROZONA_ambiental = new geoXML3.parser({
+		map: map,
+		zoom: false,
+		createPolygon: addPolygonMACROZONA_ambiental,
+	});
+
+	function addPolygonMACROZONA_ambiental(placemark) {
+		pol_MACROZONA_ambiental = geoXmlMACROZONA_ambiental.createPolygon(placemark);
+		return pol_MACROZONA_ambiental;
+	}
+	geoXmlMACROZONA_ambiental.parse('kml/MACROZONA_ambiental.kml');
+
+	// MACROZONA_rural
+	var geoXmlMACROZONA_rural = new geoXML3.parser({
+		map: map,
+		zoom: false,
+		createPolygon: addPolygonMACROZONA_rural,
+	});
+
+	function addPolygonMACROZONA_rural(placemark) {
+		pol_MACROZONA_rural = geoXmlMACROZONA_rural.createPolygon(placemark);
+		return pol_MACROZONA_rural;
+	}
+	geoXmlMACROZONA_rural.parse('kml/MACROZONA_rural.kml');
+
+	var geocoder = new google.maps.Geocoder();
 
 	var topBar = document.getElementById('top-bar');
 	var input = document.getElementById('pac-input');
@@ -48,14 +162,40 @@ function initMap() {
 			window.alert("Endereço não localizado: '" + place.name + "'");
 			return;
 		}
+		// Pesquisar no objeto address_components do endereço pelo long_name "Mesquita"
+		let cidade = place.address_components.find(obj => obj.long_name === "Mesquita");
 
-		// Testar se o endereço pesquisado é em Mesquita
-		let cidade = place.address_components[2].long_name;
-		// Se a cidade não for Mesquita, alertar ao usuário e não mostrar o PIN
-		if (cidade !== "Mesquita") {
-			window.alert("O endereço pesquisado não é em Mesquita.");
+		if(typeof cidade === 'undefined'){
+			alert("O endereço buscado não é em Mesquita.");
 			return;
 		}
+		
+		////////////////////////////////////////////////// Preencher a variável "area_pesquisada"
+		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_AAC)){
+			area_pesquisada = "AAC";
+		}
+		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_AAC_b)){
+			area_pesquisada = "AAC_b";
+		}
+		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_AOP_I)){
+			area_pesquisada = "AOP_I";
+		}
+		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_AOP_II)){
+			area_pesquisada = "AOP_II";
+		}
+		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_ARA)){
+			area_pesquisada = "ARA";
+		}
+		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_ARA_b)){
+			area_pesquisada = "ARA_b";
+		}
+		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_MACROZONA_ambiental)){
+			area_pesquisada = "MACROZONA_ambiental";
+		}
+		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_MACROZONA_rural)){
+			area_pesquisada = "MACROZONA_rural";
+		}
+
 
 		// If the place has a geometry, then present it on a map.
 		if (place.geometry.viewport) {
@@ -85,33 +225,6 @@ function initMap() {
 	
 	//autocomplete.setTypes('address');
 	autocomplete.setOptions({ strictBounds: false });
-
-	//camada de zoneamento
-	var geoXmlAAC = new geoXML3.parser({ map: map, zoom: false });
-	geoXmlAAC.parse('kml/AAC.kml');
-
-	var geoXmlAAC_b = new geoXML3.parser({ map: map, zoom: false });
-	geoXmlAAC_b.parse('kml/AAC_b.kml');
-
-	var geoXmlAOP_I = new geoXML3.parser({ map: map, zoom: false });
-	geoXmlAOP_I.parse('kml/AOP_I.kml');
-
-	var geoXmlAOP_II = new geoXML3.parser({ map: map, zoom: false });
-	geoXmlAOP_II.parse('kml/AOP_II.kml');
-
-	var geoXmlARA = new geoXML3.parser({ map: map, zoom: false });
-	geoXmlARA.parse('kml/ARA.kml');
-
-	var geoXmlARA_b = new geoXML3.parser({ map: map, zoom: false });
-	geoXmlARA_b.parse('kml/ARA_b.kml');
-
-	var geoXmlMACROZONA_ambiental = new geoXML3.parser({ map: map, zoom: false });
-	geoXmlMACROZONA_ambiental.parse('kml/MACROZONA_ambiental.kml');
-
-	var geoXmlMACROZONA_rural = new geoXML3.parser({ map: map, zoom: false });
-	geoXmlMACROZONA_rural.parse('kml/MACROZONA_rural.kml');
-
-	var geocoder = new google.maps.Geocoder();
 
 }
     
