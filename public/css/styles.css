@@ -3,6 +3,23 @@
   margin-top: 0 !important;
 }
 
+#modalInfo .modal-header {
+	font-size: 0.6rem;
+	line-height: 1rem;
+}
+
+#modalInfo .modal-header img {
+	width: 3rem;
+}
+
+#top-bar {
+	left: 0!important;
+}
+
+/*#top-bar {
+	display: none!important;
+}*/
+
 .back-branco {
 	background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 31%, rgba(250,250,250,1) 100%);
 }
@@ -14,6 +31,10 @@
 
 .cinza {
 	background: linear-gradient(60deg, #dbdbdb, #ffffff);
+}
+
+.item-start {
+	align-items: flex-start !important;
 }
 
 .footer {
@@ -30,6 +51,10 @@
 	padding-bottom: 0 !important;
 	pointer-events: auto;
 	text-align: center;
+}
+
+.hide {
+	display: none!important;
 }
 
 .main-panel {

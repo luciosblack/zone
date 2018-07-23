@@ -8,76 +8,121 @@
   <!-- Favicons -->
   <link rel="apple-touch-icon" href="{{ asset ('img/apple-icon.png')}}">
   <link rel="icon" href="{{ asset('img/favicon.png')}}">
-
-  <title> @section('titulo') @show </title>
-
+  <title>
+    Relatório de Zoneamento
+  </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
   <link rel="stylesheet" href="{{ asset('css/material-dashboard.css')}}">
   <!-- Documentation extras -->
-  <!-- CSS Just for demo purpose, dont include it in your project -->
-  <link href="{{ asset('assets-for-demo/demo.css')}}" rel="stylesheet" type="text/css" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="{{ asset('assets-for-demo/demo.css')}}" rel="stylesheet" />
   <!-- iframe removal -->
 
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css')}}">
-  @stack('css')
-
   <link rel="stylesheet" href="{{ asset('css/styles.css')}}">
-
+  <link rel="stylesheet" href="{{ asset('css/print.css')}}">
 </head>
 
-<body class="sidebar-mini">
-  
-    {{-- Menu Lateral --}}
-    @include('includes.layouts.sidebar')
+<body>
 
-    <div class="main-panel">
-      
-      {{-- Menu Superior --}}
-      @include('includes.layouts.topbar')
+			<div id="relatorio" class="card col-sm-10 col-sm-offset-1">
+				<div class=" card-header text-center d-flex flex-wrap">    
+					<div class="col-sm-12">
+						<img src="img/brasao.png">
+					</div>
+				  <p class="col-sm-12 category text-center">
+				  	Estado do Rio de Janeiro <br>
+				  	Prefeitura Municipal de Mesquita <br>
+				  	Secretária Municipal de Meio Ambiente e Urbanismo<br>
+				  	Departamento de Edificações<br>
+				  </p>
+				</div>
+        <div class="card-body">
+          <h4 class="card-header printBG-neutral text-center">Certidão de Zoneamento</h4>
+          <table class="table ">
+            {{-- Primeira tabela --}}
+            <thead>
+              <tr>
+                <th class="text-left">1 - Identificação da Consulta</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Logradouro:</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Bairro:</td>
+                <td></td>
+              </tr>
+            </tbody>
+            {{-- Segunda Tabela --}}
+            <thead>
+              <tr>
+                <th class="text-left">2 - Zoneamento</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Zona:</td>
+                <td>A.O.P.1</td>
+                <td>ÁREA DE OCUPAÇÃO PRIORITÁRIA 1</td>
 
-      <div id="map"></div>
-      
-      {{-- Conteúdo principal --}}
-      <div id="modal"> 
+              </tr>
+              <tr>
+                <td>Uso:</td>
+              </tr>
+              <tr>
+                <td>R1</td>
+                <td>Residencial Unifamiliar</td>
+                <td>Tolerado</td>
+              </tr>
+            </tbody>
+            {{-- Terceira Tabela --}}
+            <thead>
+              <tr>
+                <th class="text-left">3 - Dados Informados pelo Técnico</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Testada Mínima do Lote:</td>
+                <td>10,00 metros</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table table-condensed">
+            
+          </table>
+          <table class="table table-condensed">
+            
+          </table>
+          <div class="card-footer text-muted d-flex flex-wrap">
+            <p class="col-sm-12">
+              - A quantidade de pavimento é obtida através da relação de metros quadrados passíveis de construção com a taxa de ocupação<br>
+              OBS: (AT: Área do terreno) x (CAT Máximo) = quantidade total de metros quadrados passíveis de construção
+            </p>
+            <p class="col-sm-12">- Para uso residencial considera-se uma vaga de estacionamento por unidade </p>
+            <p class="col-sm-12">- Esta certidão tem sua informações extraídas da lei de Uso, ocupão e parcelamento do solo urbano de nº 015 de 14 de fevereiro de 2001 e do Plano Diretor Municipal de lei nº355 de 25 de outubro de 2006</p>
+          </div>
+        </div>
+			</div>
 
-        @include('includes.modal.welcome')
-        @include('includes.modal.termos')
-        @include('includes.modal.info')
-
-      </div>
-
-      <div id="content">
-
-        @yield('content')
-
-      </div>
-
-      <button class="btn btn-sm btn-link" id="infowindow-content">
-        <img src="" width="16" height="16" id="place-icon">
-        <span id="place-name"  class="title"></span><br>
-        <span id="place-address"></span>
-      </button>
-
-      {{-- Rodapé --}}
-      @include('includes.layouts.footer')
-
-    </div>
-  
 </body>
-
-<!-- Script de mapeamento-->
-<script src="{{ asset("js/geoxml3/polys/geoxml3.js") }}" type="text/javascript"></script>
-
-
-
 <!--   Core JS Files   -->
 <script src="{{ asset ('js/core/jquery.min.js')}}"></script>
 <script src="{{ asset ('js/core/popper.min.js')}}"></script>
 <script src="{{ asset ('js/bootstrap-material-design.js')}}"></script>
 <script src="{{ asset ('js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>
-
+<!--  Google Maps Plugin  -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
 <script src="{{ asset ('js/plugins/moment.min.js')}}"></script>
 <!--    Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
@@ -122,17 +167,17 @@
 <script src="{{ asset('js/plugins/jasny-bootstrap.min.js')}}"></script>
 <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
 <script src="{{ asset('js/plugins/fullcalendar.min.js')}}"></script>
+<!-- demo init -->
+<script src="{{ asset('js/plugins/demo.js')}}"></script>
+<script type="text/javascript">
+  $().ready(function() {
+    demo.checkFullPageBackgroundImage();
 
-<script src="{{ asset('js/geoxml3/polys/geoxml3.js') }}" type="text/javascript"></script>
-
-<!--  Google Maps Plugin  -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD88keSNZva3fJ2F01M6YOw78uf3xrtU1I&libraries=places&callback=initMap">
+    setTimeout(function() {
+      // after 1000 ms we add the class animated to the login/register card
+      $('.card').removeClass('card-hidden');
+    }, 700)
+  });
 </script>
-
-
-<script type="text/javascript" src="{{ asset('js/scripts.js')}}"></script>
-
-
-@stack('scripts')
 
 </html>

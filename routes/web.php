@@ -12,9 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-Route::get('/termos', function () {
-    return view('termos');
+Route::get('/relatorio', function () {
+    return view('relatorio');
 });

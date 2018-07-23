@@ -1,4 +1,4 @@
-@extends('layouts.material')
+@extends('home')
 
 @section('titulo')
 
@@ -16,5 +16,7 @@ Informe o Título
 @endsection
 
 @push('scripts')
+
+<script type="text/javascript"></script>
 
 @endpush
