@@ -70,12 +70,6 @@
 <!-- Script de mapeamento-->
 <script src="{{ asset("js/geoxml3/polys/geoxml3.js") }}" type="text/javascript"></script>
 
-<!--  Google Maps Plugin  -->
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD88keSNZva3fJ2F01M6YOw78uf3xrtU1I&libraries=places&callback=initMap"
-  async defer></script>
-<script type="text/javascript" src="{{ asset('js/scripts.js')}}"></script>
-
 
 
 <!--   Core JS Files   -->
@@ -128,6 +122,16 @@
 <script src="{{ asset('js/plugins/jasny-bootstrap.min.js')}}"></script>
 <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
 <script src="{{ asset('js/plugins/fullcalendar.min.js')}}"></script>
+
+<script src="{{ asset('js/geoxml3/polys/geoxml3.js') }}" type="text/javascript"></script>
+
+<!--  Google Maps Plugin  -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD88keSNZva3fJ2F01M6YOw78uf3xrtU1I&libraries=places&callback=initMap">
+</script>
+
+
+<script type="text/javascript" src="{{ asset('js/scripts.js')}}"></script>
+
 
 @stack('scripts')
 

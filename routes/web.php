@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('/relatorio', function () {
     return view('relatorio');
 });
+
+Route::get('buscaZona', 'ZonaController@buscaZona');

@@ -9,6 +9,7 @@ class Zona extends Model
     protected $table = "zonas";
 
     protected $filable = [
+        'sigla',
         'nome',
         'testada',
         'area',
@@ -25,6 +26,6 @@ class Zona extends Model
 
     public function usos()
     {
-        return $this->belongsToMany('App\Models\Uso', 'usos_zonas');
+        return $this->belongsToMany('App\Models\Uso', 'usos_zonas')->withPivot('uso');
     }   
 }

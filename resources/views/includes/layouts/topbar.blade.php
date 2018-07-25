@@ -17,8 +17,7 @@
       <div id="pac-card" class="input-group has-info">
         <input id="pac-input" type="text" class="form-control" placeholder="Informe o endereço">
       </div>
-    </diwv>
-
+    </div>
     <ul class="navbar-nav">
       <li class="nav-item"></li>
     </ul>
