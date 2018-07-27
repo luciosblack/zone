@@ -54,10 +54,10 @@
                 <td>Logradouro:</td>
                 <td></td>
               </tr>
-              <tr>
+              {{-- <tr>
                 <td>Bairro:</td>
                 <td></td>
-              </tr>
+              </tr> --}}
             </tbody>
             {{-- Segunda Tabela --}}
             <thead>
@@ -169,15 +169,4 @@
 <script src="{{ asset('js/plugins/fullcalendar.min.js')}}"></script>
 <!-- demo init -->
 <script src="{{ asset('js/plugins/demo.js')}}"></script>
-<script type="text/javascript">
-  $().ready(function() {
-    demo.checkFullPageBackgroundImage();
-
-    setTimeout(function() {
-      // after 1000 ms we add the class animated to the login/register card
-      $('.card').removeClass('card-hidden');
-    }, 700)
-  });
-</script>
-
 </html>

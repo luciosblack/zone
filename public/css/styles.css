@@ -1,17 +1,17 @@
 /* Alterar a cor do placheholder para ter mais destaque*/
 ::placeholder {
-    color: #3D276B !important;
+    color: #000 !important;
     opacity: 1; /* Firefox */
     text-align: center !important;
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: #3D276B !important;
+   color: #000 !important;
    text-align: center !important;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-   color: #3D276B !important;
+   color: #000 !important;
    text-align: center !important;
 }
 /**************************************/
@@ -30,6 +30,14 @@
 	width: 3rem;
 }
 
+#nome_zona {
+	margin-bottom: 0 !important;
+}
+
+#sigla_zona {
+	margin-bottom: 0 !important;
+}
+
 #top-bar {
 	left: 0!important;
 }
@@ -46,6 +54,7 @@
 	background: linear-gradient(to right, rgba(61,39,107,1) 0%, rgba(61,39,107,1) 62%, rgba(116,84,186,1) 100%);
 	color: #FFF;
 }
+
 
 .cinza {
 	background: linear-gradient(60deg, #dbdbdb, #ffffff);
@@ -199,7 +208,6 @@
 	margin-left: 12px;
 	padding: 0 11px 0 13px;
 	text-overflow: ellipsis;
-	width: 400px;
 }
 
 #pac-input:focus {
