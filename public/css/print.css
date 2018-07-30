@@ -1,7 +1,10 @@
 body {
 	font-size: 0.700rem;
-	letter-spacing: 0.1em
+	letter-spacing: 0.1em;
+	display: flex !important;
+	justify-content: center !important;
 }
+
 img {
 	width: 3rem;
 }
@@ -52,8 +55,20 @@ img {
 }
 
 @media print {
+
+	table#table2 {
+		page-break-after: always;
+		page-break-inside: avoid;
+	}
+
+	table#table3 {
+		page-break-inside: auto;	
+	}
+
 	.printBG-neutral {
 		background-color:#EEE !important;
 		-webkit-print-color-adjust: exact;
 	}
+
+
 }

@@ -57,7 +57,7 @@
 		      
 		      <div class="modal-footer d-flex">
 		        <button class="btn btn-danger" data-dismiss="modal">Fechar</button>
-		        <a href="relatorio" target="_blank" class="btn btn-success ml-auto">Imprimir</a>
+		        <a href="relatorio" target="_blank" id="btn_imprimir" class="btn btn-success ml-auto">Imprimir</a>
 		      </div>
 		    </div>
 	    </div> {{-- Fim modal-content --}}
@@ -106,13 +106,12 @@
 					);
 				}
 
+				// Colocar o valor que o usuário pesquisou em um campo hidden do formulário
+				$("input#campo_pesquisa").val($("#pac-input").val());
+				// Colocar o id da zona pesquisada no formulário
+				$("input#id_zona").val(resposta.id);
+
 			});
-
-
-
-
-
-
 
 			// Preencher a tabela
 			$("#tabela_dados tbody").empty();
@@ -177,13 +176,20 @@
 				
 			);
 
-
-
 			$('#modalInfo').modal({backdrop: 'static'});
 
 		});
 
 	});
+
+	// Botão de imprimir
+	$("#btn_imprimir").click(function(e){
+
+		e.preventDefault();
+
+		$("form#formRelatorio").submit();
+
+	})
 </script>
 
 @endpush
