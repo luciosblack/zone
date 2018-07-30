@@ -51,7 +51,7 @@
             </thead>
             <tbody>
               <tr>
-                <td>Logradouro:</td>
+                <td>Endereço:</td>
                 <td>{{ $logradouro }}</td>
               </tr>
             </tbody>

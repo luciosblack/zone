@@ -62,7 +62,8 @@ img {
 	}
 
 	table#table3 {
-		page-break-inside: auto;	
+		page-break-before: auto;
+		page-break-inside: avoid;	
 	}
 
 	.printBG-neutral {
