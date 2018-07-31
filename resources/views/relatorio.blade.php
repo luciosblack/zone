@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
   <link rel="stylesheet" href="{{ asset('css/material-dashboard.css')}}">
   <!-- Documentation extras -->
-  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <!-- CSS Just for demo purpose, dont include it in your project -->
   <link href="{{ asset('assets-for-demo/demo.css')}}" rel="stylesheet" />
   <!-- iframe removal -->
 
