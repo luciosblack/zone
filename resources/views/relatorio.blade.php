@@ -138,6 +138,7 @@
             </p>
             <p class="col-sm-12">- Para uso residencial considera-se uma vaga de estacionamento por unidade </p>
             <p class="col-sm-12">- Esta certidão tem sua informações extraídas da lei de Uso, ocupão e parcelamento do solo urbano de nº 015 de 14 de fevereiro de 2001 e do Plano Diretor Municipal de lei nº355 de 25 de outubro de 2006</p>
+            <p class="date-print col-sm-12 text-right"> Mesquita, </p>
           </footer>
         </div>
 			</div>
@@ -196,4 +197,19 @@
 <script src="{{ asset('js/plugins/fullcalendar.min.js')}}"></script>
 <!-- demo init -->
 <script src="{{ asset('js/plugins/demo.js')}}"></script>
+<script type="text/javascript">
+  $('.date-print').ready(function () {
+    var data = new Date();
+
+    // var semana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"][data.getDay()];
+
+    var dia = data.getDate();
+
+    var mes = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"][data.getMonth()];
+
+    var ano = data.getFullYear();
+
+    $('.date-print').html(`Mesquita, ${dia} de ${mes} de ${ano}`);
+  })
+</script>
 </html>

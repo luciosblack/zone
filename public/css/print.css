@@ -18,7 +18,7 @@ img {
 }
 
 .card-footer.text-muted p {
-	font-size: 0.650rem;
+	font-size: 0.700rem;
 }
 
 .card-body h4.card-header {
@@ -28,6 +28,12 @@ img {
 
 .col-sm-offset-1{
 	margin-left:8.33333333%;
+}
+
+.date-print {
+	color: #333333;
+	font-size: 0.900rem !important;
+	font-weight: 450;
 }
 
 .printBG-neutral {
