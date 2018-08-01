@@ -26,7 +26,7 @@
 
 <body>
 
-			<div id="relatorio" class="card col-sm-10 col-sm-offset-1">
+			<div id="relatorio" class="card col-sm-11">
 				<div class=" card-header text-center d-flex flex-wrap">    
 					<div class="col-sm-12">
 						<img src="img/brasao.png">
@@ -40,8 +40,8 @@
 				</div>
         <div class="card-body">
           <h4 class="card-header printBG-neutral text-center">Certidão de Zoneamento</h4>
-          <table class="table ">
-            {{-- Primeira tabela --}}
+          {{-------------- Primeira tabela --------------------------------------- --}}
+          <table id="table1" class="table">
             <thead>
               <tr>
                 <th class="text-left">1 - Identificação da Consulta</th>
@@ -52,14 +52,12 @@
             <tbody>
               <tr>
                 <td>Logradouro:</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Bairro:</td>
-                <td></td>
+                <td>{{ $logradouro }}</td>
               </tr>
             </tbody>
-            {{-- Segunda Tabela --}}
+          </table>
+          {{-------------- Segunda tabela --------------------------------------- --}}
+          <table id="table 2" class="table">
             <thead>
               <tr>
                 <th class="text-left">2 - Zoneamento</th>
@@ -70,20 +68,23 @@
             <tbody>
               <tr>
                 <td>Zona:</td>
-                <td>A.O.P.1</td>
-                <td>ÁREA DE OCUPAÇÃO PRIORITÁRIA 1</td>
-
+                <td>{{ $zona->sigla }}</td>
+                <td>{{ $zona->nome }}</td>
               </tr>
               <tr>
                 <td>Uso:</td>
               </tr>
-              <tr>
-                <td>R1</td>
-                <td>Residencial Unifamiliar</td>
-                <td>Tolerado</td>
-              </tr>
+              @foreach($zona->usos as $uso)
+                <tr>
+                  <td>{{ $uso->codigo }}</td>
+                  <td>{{ $uso->descricao }}</td>
+                  <td>{{ $uso->pivot->uso }}</td>
+                </tr>
+              @endforeach
             </tbody>
-            {{-- Terceira Tabela --}}
+          </table>
+          {{-------------- Terceira tabela --------------------------------------- --}}
+          <table id="table3" class="table">
             <thead>
               <tr>
                 <th class="text-left">3 - Dados Informados pelo Técnico</th>
@@ -93,25 +94,51 @@
             </thead>
             <tbody>
               <tr>
-                <td>Testada Mínima do Lote:</td>
-                <td>10,00 metros</td>
+                <td>Testada Mínima:</td>
+                <td>{{ $zona->testada }}</td>
+              </tr>
+              <tr>
+                <td>Área Total Mínima do Lote:</td>
+                <td>{{ $zona->area }}</td>
+              </tr>
+              <tr>
+                <td>Coeficiente de Aprovamento Mínimo:</td>
+                <td>{{ $zona->coeficiente_min }}</td>
+              </tr>
+              <tr>
+                <td>Coeficiente de Aprovamento Básico:</td>
+                <td>{{ $zona->coeficiente_bas }}</td>
+              </tr>
+              <tr>
+                <td>Coeficiente de Aprovamento Máximo:</td>
+                <td>{{ $zona->coeficiente_max }}</td>
+              </tr>
+              <tr>
+                <td>Afastamento Frontal:</td>
+                <td>{{ $zona->afastamento }}</td>
+              </tr>
+              <tr>
+                <td>Taxa de Ocupação:</td>
+                <td>{{ $zona->tx_ocupacao }}</td>
+              </tr>
+              <tr>
+                <td>Taxa de Permeabilidade:</td>
+                <td>{{ $zona->tx_permeabilidade }}</td>
+              </tr>
+              <tr>
+                <td>Vagas de Estacionamento:</td>
+                <td>{{ $zona->vagas_estacionamento }}</td>
               </tr>
             </tbody>
           </table>
-          <table class="table table-condensed">
-            
-          </table>
-          <table class="table table-condensed">
-            
-          </table>
-          <div class="card-footer text-muted d-flex flex-wrap">
+          <footer class="card-footer text-muted d-flex flex-wrap">
             <p class="col-sm-12">
               - A quantidade de pavimento é obtida através da relação de metros quadrados passíveis de construção com a taxa de ocupação<br>
               OBS: (AT: Área do terreno) x (CAT Máximo) = quantidade total de metros quadrados passíveis de construção
             </p>
             <p class="col-sm-12">- Para uso residencial considera-se uma vaga de estacionamento por unidade </p>
             <p class="col-sm-12">- Esta certidão tem sua informações extraídas da lei de Uso, ocupão e parcelamento do solo urbano de nº 015 de 14 de fevereiro de 2001 e do Plano Diretor Municipal de lei nº355 de 25 de outubro de 2006</p>
-          </div>
+          </footer>
         </div>
 			</div>
 
@@ -169,15 +196,4 @@
 <script src="{{ asset('js/plugins/fullcalendar.min.js')}}"></script>
 <!-- demo init -->
 <script src="{{ asset('js/plugins/demo.js')}}"></script>
-<script type="text/javascript">
-  $().ready(function() {
-    demo.checkFullPageBackgroundImage();
-
-    setTimeout(function() {
-      // after 1000 ms we add the class animated to the login/register card
-      $('.card').removeClass('card-hidden');
-    }, 700)
-  });
-</script>
-
 </html>

@@ -24,5 +24,17 @@ class ZonaController extends Controller
 		];
 		
 		return json_encode($zona);
-   }
+    }
+
+    public function imprimirRelatorio(Request $request) {
+
+   		$logradouro = $request->campo_pesquisa;
+   		$id_zona = $request->id_zona;
+
+   		// Buscar a zona pelo id
+   		$zona = Zona::find($id_zona)->with('usos')->first();
+
+   		return view('relatorio', compact('logradouro', 'zona'));
+
+    }
 }

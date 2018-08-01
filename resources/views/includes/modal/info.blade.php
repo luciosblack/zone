@@ -1,63 +1,65 @@
 <div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="modalInfoLabel">
 	<div class="modal-dialog modal-lg" role="document">
 	    <div class="modal-content">
-
-				{{---------------------------- Modal Body --}}
-	      <div class="modal-body">
-				<table id='tabela_titulo' class="table table-hover table-condensed" >
-					<thead>
-						<tr>
-							<th id='sigla_zona'>A.O.P.1</th>
-							<th id='nome_zona'>ÁREA DE OCUPAÇÃO PRIORITÁRIA 1</th>
-						</tr>
-					</thead>
-				</table>
-				  
-				<ul class="nav nav-pills nav-pills-primary" role="tablist">
-				    <li class="nav-item">
-				        <a class="nav-link active" data-toggle="tab" href="#link1" role="tablist" aria-expanded="true">
-				        	Zoneamento
-				        </a>
-				    </li>
-				    <li class="nav-item">
-				        <a class="nav-link" data-toggle="tab" href="#link2" role="tablist" aria-expanded="true">
-				        	Dados informados pelo técnico
-				        </a>
-				    </li>
-					</ul>
-					<div class="tab-content tab-space">
-				    <div class="tab-pane active" id="link1" aria-expanded="true">
-			    		<div class="table-responsive">
-				    		<table id='tabela_zonas' class="table table-hover table-condensed" >
-								<thead>
-									<tr>
-										<th>Uso:</th>
-									</tr>
-								</thead>
-
-				    			<tbody>
-
-								</tbody>
-				    		</table>
-				    	</div>
-						</div>
-						<div class="tab-pane" id="link2" aria-expanded="true">
-							<div class="table-responsive">
-				    		<table id='tabela_dados' class="table table-hover table-condensed">
-				    			<tbody>
-
-								</tbody>
-				    		</table>
-				    	</div>
+	    	<div class="card  card-signup card-plain">
+		    	<div class="modal-header">
+						<div class="card-header card-header-text card-header-success">
+								<div class="card-text col-sm">
+									<div class="row">
+										<div id="sigla_zona"class="h5 col-sm-3 text-right"></div>
+										<div id="nome_zona" class="h5 col-sm-8 text-center"></div>
+									</div>
+								</div>
 						</div>
 					</div>
-	      </div> {{-- Fim modal Body --}}
-	      
-	      <div class="modal-footer d-flex">
-	        <button class="btn btn-primary btn-link" data-dismiss="modal">Fechar</button>
-	        <a href="relatorio" target="_blank" class="btn btn-primary btn-link ml-auto">Imprimir</a>
-	      </div>
 
+					{{---------------------------- Modal Body --}}
+		      <div class="modal-body">
+					<ul class="nav nav-pills nav-pills-success" role="tablist">
+					    <li class="nav-item">
+					        <a class="nav-link active" data-toggle="tab" href="#link1" role="tablist" aria-expanded="true">
+					        	Zoneamento
+					        </a>
+					    </li>
+					    <li class="nav-item">
+					        <a class="nav-link" data-toggle="tab" href="#link2" role="tablist" aria-expanded="true">
+					        	Dados informados pelo técnico
+					        </a>
+					    </li>
+						</ul>
+						<div class="tab-content tab-space">
+					    <div class="tab-pane active" id="link1" aria-expanded="true">
+				    		<div class="table-responsive">
+					    		<table id='tabela_zonas' class="table table-hover table-condensed" >
+									<thead>
+										<tr>
+											<th>Uso:</th>
+										</tr>
+									</thead>
+
+					    			<tbody>
+
+									</tbody>
+					    		</table>
+					    	</div>
+							</div>
+							<div class="tab-pane" id="link2" aria-expanded="true">
+								<div class="table-responsive">
+					    		<table id='tabela_dados' class="table table-hover table-condensed">
+					    			<tbody>
+
+									</tbody>
+					    		</table>
+					    	</div>
+							</div>
+						</div>
+		      </div> {{-- Fim modal Body --}}
+		      
+		      <div class="modal-footer d-flex">
+		        <button class="btn btn-danger" data-dismiss="modal">Fechar</button>
+		        <a href="relatorio" target="_blank" id="btn_imprimir" class="btn btn-success ml-auto">Imprimir</a>
+		      </div>
+		    </div>
 	    </div> {{-- Fim modal-content --}}
 	  </div> {{-- Fim modal-dialog modal-lg --}}
 </div> {{-- Fim #modalInfo --}}
@@ -104,13 +106,12 @@
 					);
 				}
 
+				// Colocar o valor que o usuário pesquisou em um campo hidden do formulário
+				$("input#campo_pesquisa").val($("#pac-input").val());
+				// Colocar o id da zona pesquisada no formulário
+				$("input#id_zona").val(resposta.id);
+
 			});
-
-
-
-
-
-
 
 			// Preencher a tabela
 			$("#tabela_dados tbody").empty();
@@ -175,13 +176,20 @@
 				
 			);
 
-
-
 			$('#modalInfo').modal({backdrop: 'static'});
 
 		});
 
 	});
+
+	// Botão de imprimir
+	$("#btn_imprimir").click(function(e){
+
+		e.preventDefault();
+
+		$("form#formRelatorio").submit();
+
+	})
 </script>
 
 @endpush

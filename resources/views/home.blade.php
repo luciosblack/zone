@@ -64,6 +64,12 @@
       @include('includes.layouts.footer')
 
     </div>
+
+    <form id="formRelatorio" method="post" action="{{url('/relatorio')}}" target="_blank">
+      {{ csrf_field()  }}
+      <input type="hidden" id="campo_pesquisa" name="campo_pesquisa" value="" />
+      <input type="hidden" id="id_zona" name="id_zona" value="" />
+    </form>
   
 </body>
 

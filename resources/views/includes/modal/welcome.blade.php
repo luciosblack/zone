@@ -4,7 +4,7 @@
     <div class="modal-content">
     	<div class="card card-signup card-plain">
 	      <div class="modal-header">
-	      	<div class="card-header card-header-primary text-center">
+	      	<div class="card-header card-header-success text-center">
 		        <h5 class="card-title" id="modalWelcomeTitle">Zoneamento 360</h5>
 	        </div>
 	      </div>
@@ -12,10 +12,8 @@
 	        Bem vindo, campo para informação sobre o serviço do portal
 	      </div>
 	      <div class="">
-	      	<button class="ajax btn btn-primary btn-sm btn-link" data-toggle="modal" data-target="#modalTermos" {{-- data-dismiss="modal" --}}>Termo de uso</button>	      	
-	      	{{-- <button type="button" class="btn btn-primary btn-sm btn-link float-left" data-dismiss="modal">Cadastrar</button>
-	        <button type="button" class="btn btn-primary btn-sm btn-link" data-dismiss="modal">Login</button> --}}
-	        <button id="entrar" type="button" class="btn btn-primary btn-sm d-flex btn-link float-right" data-dismiss="modal">Entrar</button>
+	      	<button class="ajax btn btn-success btn-sm btn-link" data-toggle="modal" data-target="#modalTermos">Termo de uso</button>	      	
+	        <button id="entrar" type="button" class="btn btn-success btn-sm d-flex btn-link float-right" data-dismiss="modal">Entrar</button>
 	      </div>
 	    </div>
     </div>
