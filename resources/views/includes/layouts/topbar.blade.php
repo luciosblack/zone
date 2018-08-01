@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-absolute fixed-top back-branco hide" id="top-bar" color-on-scroll="500">
 	<div class="container-fluid">
  	<a href="http://www.mesquita.rj.gov.br/pmm/" target="_blank">
-		<img class="logo" src="/img/Logotipo-Horizontal-Colorido-PMM.png">
+		<img class="logo" src="{{ asset("img/Logotipo-Horizontal-Colorido-PMM.png") }}">
  	</a>
 
  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">

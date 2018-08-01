@@ -69,7 +69,8 @@
 <script type="text/javascript">
 	$('#infowindow-content').click(function() {
 		//pesquisa no banco de dados a ZONA selecionada em AREA_PESQUISADA
-		$.get('/buscaZona?sigla='+area_pesquisada, function(resposta){
+		 
+		$.get('{{ url("/buscaZona?sigla=")}}'+area_pesquisada, function(resposta){
 
 			// Converter os dados da API em objetos javascript
 			resposta = JSON.parse(resposta);

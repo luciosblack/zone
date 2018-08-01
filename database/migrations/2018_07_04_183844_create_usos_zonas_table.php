@@ -26,14 +26,7 @@ class CreateUsosZonasTable extends Migration
 
             $table->timestamps();
         });
-
-        //para usar com postgres
-        DB::statement(" 
-            ALTER TABLE usos_zonas 
-	            ALTER COLUMN uso DROP DEFAULT,
-	            ALTER COLUMN uso type tp_usos_zonas USING (uso::tp_usos_zonas),
-	            ALTER COLUMN uso SET DEFAULT 'P'
-        ");
+       
 
         Schema::table('usos_zonas', function($table){
             $table->foreign('zona_id')->references('id')->on('zonas')->onDelete('cascade');
