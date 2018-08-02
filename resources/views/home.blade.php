@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <!-- Favicons -->
-  <link rel="apple-touch-icon" href="{{ asset ('img/apple-icon.png')}}">
-  <link rel="icon" href="{{ asset('img/favicon.png')}}">
+  <link rel="apple-touch-icon" href="{{ asset ('img/brasao.png')}}">
+  <link rel="icon" href="{{ asset('img/brasao.png')}}">
 
   <title> @section('titulo') @show </title>
 
