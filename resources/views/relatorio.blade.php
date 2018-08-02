@@ -57,7 +57,7 @@
             </tbody>
           </table>
           {{-------------- Segunda tabela --------------------------------------- --}}
-          <table id="table 2" class="table">
+          <table id="table2" class="table">
             <thead>
               <tr>
                 <th class="text-left">2 - Zoneamento</th>
@@ -75,11 +75,17 @@
                 <td>Uso:</td>
               </tr>
               @foreach($zona->usos as $uso)
-                <tr>
-                  <td>{{ $uso->codigo }}</td>
-                  <td>{{ $uso->descricao }}</td>
-                  <td>{{ $uso->pivot->uso }}</td>
-                </tr>
+                @if($uso->pivot->uso !== 'P')
+                  <tr>
+                    <td>{{ $uso->codigo }}</td>
+                    <td>{{ $uso->descricao }}</td>
+                    @if($uso->pivot->uso == 'A')
+                      <td>Adequeado</td>
+                    @else
+                      <td>Tolerado</td>
+                    @endif
+                  </tr>
+                @endif
               @endforeach
             </tbody>
           </table>
@@ -200,7 +206,7 @@
 <!-- demo init -->
 <script src="{{ asset('js/plugins/demo.js')}}"></script>
 <script type="text/javascript">
-  $('.date-print').ready(function () {
+  $('body').ready(function () {
     var data = new Date();
 
     // var semana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"][data.getDay()];
@@ -211,7 +217,8 @@
 
     var ano = data.getFullYear();
 
-    $('.date-print').html(`data de consulta/emissão: Mesquita, ${dia} de ${mes} de ${ano}`);
+    $('.date-print').html(`Emissão: ${dia} de ${mes} de ${ano}`);
+
   })
 </script>
 </html>
