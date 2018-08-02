@@ -15,7 +15,7 @@
  	<div class="collapse navbar-collapse justify-content-end">
     <div class="navbar-form">
       <div id="pac-card" class="input-group has-success">
-        <input id="pac-input" type="text" class="form-control" placeholder="Informe o endereço">
+        <input id="pac-input" type="text" class="form-control" placeholder="Clique aqui e digite o endereço">
       </div>
     </div>
     <ul class="navbar-nav">
