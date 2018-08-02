@@ -146,7 +146,7 @@
             <p class="col-sm-12">- Esta certidão tem sua informações extraídas da lei de Uso, ocupão e parcelamento do solo urbano de nº 015 de 14 de fevereiro de 2001 e do Plano Diretor Municipal de lei nº355 de 25 de outubro de 2006</p>
             <p class="col-sm-12">- Para construção com coeficiente de aproveitamento acima do coeficiente básico será cobrada a outorga oneroso do direito de construir, de acordo com os artigos <a href="http://www.mesquita.rj.gov.br/pmm/wp-content/uploads/2017/06/LEI-COMPLEMENTAR-N%C2%B0-015-2011-USO-DO-SOLOX-PUBLICADA-EM-15-02-2011.pdf" target="_blank">127 à 129 da lei municipal nº 15/2011 - LUOPS (Lei de uso ocupação e parcelamento do solo)</a></p>
             <p class="date-print col-sm-12 text-right"></p>
-            <p class="col-sm-12 text-right">Validade: 3 meses</p>
+            <p class="col-sm-12 text-right">Validade: 90 dias</p>
           </footer>
         </div>
 			</div>
