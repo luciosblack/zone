@@ -145,7 +145,7 @@
 	}
 
 	.navbar a img.logo {
-		width: 12em;
+		width: 17em;
 	}
 
 	.off-computer {
@@ -241,4 +241,10 @@
 
 :-ms-input-placeholder {  
    color: red;  
+}
+
+.logo360{
+	width: 70px; 
+	margin-top: -4px; 
+	margin-left: -35px;"
 }

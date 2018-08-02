@@ -22,6 +22,10 @@
       <li class="nav-item"></li>
     </ul>
 	</div>
+
+	
+		<img class="logo360" src="{{ asset("img/loading.gif") }}">
+ 	
 </nav>
 <!-- End Navbar -->
 
