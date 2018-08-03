@@ -2,154 +2,161 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" href="{{ asset ('img/apple-icon.png')}}">
-  <link rel="icon" href="{{ asset('img/favicon.png')}}">
-  <title>
-    Relatório de Zoneamento
-  </title>
-  <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="{{ asset('css/material-dashboard.css')}}">
-  <!-- Documentation extras -->
-  <!-- CSS Just for demo purpose, dont include it in your project -->
-  <link href="{{ asset('assets-for-demo/demo.css')}}" rel="stylesheet" />
-  <!-- iframe removal -->
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" href="{{ asset ('img/apple-icon.png')}}">
+	<link rel="icon" href="{{ asset('img/favicon.png')}}">
+	<title>
+		Relatório de Zoneamento
+	</title>
+	<!--     Fonts and icons     -->
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="{{ asset('css/material-dashboard.css')}}">
+	<!-- Documentation extras -->
+	<!-- CSS Just for demo purpose, dont include it in your project -->
+	<link href="{{ asset('assets-for-demo/demo.css')}}" rel="stylesheet" />
+	<!-- iframe removal -->
 
-  <link rel="stylesheet" href="{{ asset('css/styles.css')}}">
-  <link rel="stylesheet" href="{{ asset('css/print.css')}}">
+	<link rel="stylesheet" href="{{ asset('css/styles.css')}}">
+	<link rel="stylesheet" href="{{ asset('css/print.css')}}">
 </head>
 
 <body>
 
-			<div id="relatorio" class="card col-sm-11">
-				<div class=" card-header text-center d-flex flex-wrap">    
-					<div class="col-sm-12">
-						<img src="img/brasao.png">
-					</div>
-				  <p class="col-sm-12 category text-center">
-				  	Estado do Rio de Janeiro <br>
-				  	Prefeitura Municipal de Mesquita <br>
-				  	Secretária Municipal de Meio Ambiente e Urbanismo<br>
-				  	Departamento de Edificações<br>
-				  </p>
-				</div>
-        <div class="card-body">
-          <h4 class="card-header printBG-neutral text-center">Certidão de Zoneamento</h4>
-          {{-------------- Primeira tabela --------------------------------------- --}}
-          <table id="table1" class="table">
-            <thead>
-              <tr>
-                <th class="text-left">1 - Identificação da Consulta</th>
-                <th></th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Endereço:</td>
-                <td>{{ $logradouro }}</td>
-              </tr>
-            </tbody>
-          </table>
-          {{-------------- Segunda tabela --------------------------------------- --}}
-          <table id="table2" class="table">
-            <thead>
-              <tr>
-                <th class="text-left">2 - Zoneamento</th>
-                <th></th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Zona:</td>
-                <td>{{ $zona->sigla }}</td>
-                <td>{{ $zona->nome }}</td>
-              </tr>
-              <tr>
-                <td>Uso:</td>
-              </tr>
-              @foreach($zona->usos as $uso)
-                @if($uso->pivot->uso !== 'P')
-                  <tr>
-                    <td>{{ $uso->codigo }}</td>
-                    <td>{{ $uso->descricao }}</td>
-                    @if($uso->pivot->uso == 'A')
-                      <td>Adequeado</td>
-                    @else
-                      <td>Tolerado</td>
-                    @endif
-                  </tr>
-                @endif
-              @endforeach
-            </tbody>
-          </table>
-          {{-------------- Terceira tabela --------------------------------------- --}}
-          <table id="table3" class="table">
-            <thead>
-              <tr>
-                <th class="text-left">3 - Dados Informados pelo Técnico</th>
-                <th></th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Testada Mínima:</td>
-                <td>{{ $zona->testada }}</td>
-              </tr>
-              <tr>
-                <td>Área Total Mínima do Lote:</td>
-                <td>{{ $zona->area }}</td>
-              </tr>
-              <tr>
-                <td>Coeficiente de Aprovamento Mínimo:</td>
-                <td>{{ $zona->coeficiente_min }}</td>
-              </tr>
-              <tr>
-                <td>Coeficiente de Aprovamento Básico:</td>
-                <td>{{ $zona->coeficiente_bas }}</td>
-              </tr>
-              <tr>
-                <td>Coeficiente de Aprovamento Máximo:</td>
-                <td>{{ $zona->coeficiente_max }}</td>
-              </tr>
-              <tr>
-                <td>Afastamento Frontal:</td>
-                <td>{{ $zona->afastamento }}</td>
-              </tr>
-              <tr>
-                <td>Taxa de Ocupação:</td>
-                <td>{{ $zona->tx_ocupacao }}</td>
-              </tr>
-              <tr>
-                <td>Taxa de Permeabilidade:</td>
-                <td>{{ $zona->tx_permeabilidade }}</td>
-              </tr>
-              <tr>
-                <td>Vagas de Estacionamento:</td>
-                <td>{{ $zona->vagas_estacionamento }}</td>
-              </tr>
-            </tbody>
-          </table>
-          <footer class="card-footer text-muted d-flex flex-wrap">
-            <p class="col-sm-12">
-              - A quantidade de pavimento é obtida através da relação de metros quadrados passíveis de construção com a taxa de ocupação<br>
-              OBS: (AT: Área do terreno) x (CAT Máximo) = quantidade total de metros quadrados passíveis de construção
-            </p>
-            <p class="col-sm-12">- Para uso residencial considera-se uma vaga de estacionamento por unidade </p>
-            <p class="col-sm-12">- Esta certidão tem sua informações extraídas da lei de Uso, ocupão e parcelamento do solo urbano de nº 015 de 14 de fevereiro de 2001 e do Plano Diretor Municipal de lei nº355 de 25 de outubro de 2006</p>
-            <p class="col-sm-12">- Para construção com coeficiente de aproveitamento acima do coeficiente básico será cobrada a outorga oneroso do direito de construir, de acordo com os artigos <a href="http://www.mesquita.rj.gov.br/pmm/wp-content/uploads/2017/06/LEI-COMPLEMENTAR-N%C2%B0-015-2011-USO-DO-SOLOX-PUBLICADA-EM-15-02-2011.pdf" target="_blank">127 à 129 da lei municipal nº 15/2011 - LUOPS (Lei de uso ocupação e parcelamento do solo)</a></p>
-            <p class="date-print col-sm-12 text-right"></p>
-            <p class="col-sm-12 text-right">Validade: 90 dias</p>
-          </footer>
-        </div>
+
+	<div id="relatorio" class="card col-sm-11">
+		<div class=" card-header text-center d-flex flex-wrap">    
+			<div class="col-sm-12">
+				<img src="img/brasao.png">
 			</div>
+			<p class="col-sm-12 category text-center">
+				Estado do Rio de Janeiro <br>
+				Prefeitura Municipal de Mesquita <br>
+				Secretária Municipal de Meio Ambiente e Urbanismo<br>
+				Departamento de Edificações<br>
+			</p>
+		</div>
+		<div class="card-body">
+			<h4 class="card-header printBG-neutral text-center">Certidão de Zoneamento</h4>
+			{{-------------- Primeira tabela --------------------------------------- --}}
+			<table id="table1" class="table">
+				<thead>
+					<tr>
+						<th class="text-left">1 - Identificação da Consulta</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Endereço:</td>
+						<td>{{ $logradouro }}</td>
+					</tr>
+				</tbody>
+			</table>
+			{{-------------- Segunda tabela --------------------------------------- --}}
+			<table id="table2" class="table">
+				<thead>
+					<tr>
+						<th class="text-left">2 - Zoneamento</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Zona:</td>
+						<td>{{ $zona->sigla }}</td>
+						<td>{{ $zona->nome }}</td>
+					</tr>
+					<tr>
+						<td>Uso:</td>
+					</tr>
+					@foreach($zona->usos as $uso)
+						@if($uso->pivot->uso !== 'P')
+							<tr>
+								<td>{{ $uso->codigo }}</td>
+								<td>{{ $uso->descricao }}</td>
+								@if($uso->pivot->uso == 'A')
+									<td>Adequeado</td>
+								@else
+									<td>Tolerado</td>
+								@endif
+							</tr>
+						@endif
+					@endforeach
+				</tbody>
+			</table>
+			{{-------------- Terceira tabela --------------------------------------- --}}
+			<table id="table3" class="table">
+				<thead>
+					<tr>
+						<th class="text-left">3 - Dados Informados pelo Técnico</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Testada Mínima:</td>
+						<td>{{ $zona->testada }}</td>
+					</tr>
+					<tr>
+						<td>Área Total Mínima do Lote:</td>
+						<td>{{ $zona->area }}</td>
+					</tr>
+					<tr>
+						<td>Coeficiente de Aprovamento Mínimo:</td>
+						<td>{{ $zona->coeficiente_min }}</td>
+					</tr>
+					<tr>
+						<td>Coeficiente de Aprovamento Básico:</td>
+						<td>{{ $zona->coeficiente_bas }}</td>
+					</tr>
+					<tr>
+						<td>Coeficiente de Aprovamento Máximo:</td>
+						<td>{{ $zona->coeficiente_max }}</td>
+					</tr>
+					<tr>
+						<td>Afastamento Frontal:</td>
+						<td>{{ $zona->afastamento }}</td>
+					</tr>
+					<tr>
+						<td>Taxa de Ocupação:</td>
+						<td>{{ $zona->tx_ocupacao }}</td>
+					</tr>
+					<tr>
+						<td>Taxa de Permeabilidade:</td>
+						<td>{{ $zona->tx_permeabilidade }}</td>
+					</tr>
+					<tr>
+						<td>Vagas de Estacionamento:</td>
+						<td>{{ $zona->vagas_estacionamento }}</td>
+					</tr>
+				</tbody>
+			</table>
+			<footer class="card-footer text-muted d-flex flex-wrap">
+				<p class="col-sm-12">
+					- A quantidade de pavimento é obtida através da relação de metros quadrados passíveis de construção com a taxa de ocupação<br>
+					OBS: (AT: Área do terreno) x (CAT Máximo) = quantidade total de metros quadrados passíveis de construção
+				</p>
+				<p class="col-sm-12">- Para uso residencial considera-se uma vaga de estacionamento por unidade </p>
+				<p class="col-sm-12">- Esta certidão tem sua informações extraídas da lei de Uso, ocupão e parcelamento do solo urbano de nº 015 de 14 de fevereiro de 2001 e do Plano Diretor Municipal de lei nº355 de 25 de outubro de 2006</p>
+				<p class="col-sm-12">- Para construção com coeficiente de aproveitamento acima do coeficiente básico será cobrada a outorga oneroso do direito de construir, de acordo com os artigos <a href="http://www.mesquita.rj.gov.br/pmm/wp-content/uploads/2017/06/LEI-COMPLEMENTAR-N%C2%B0-015-2011-USO-DO-SOLOX-PUBLICADA-EM-15-02-2011.pdf" target="_blank">127 à 129 da lei municipal nº 15/2011 - LUOPS (Lei de uso ocupação e parcelamento do solo)</a></p>
+				
+				<p class="date-print col-sm-12 text-right">Emissão: {!!$dt_validade!!}</p>
+				<p class="col-sm-12 text-right">Validade: 90 dias</p>
+				<div class="visible-print text-center" style="margin-left: 39%;">
+					{!! QrCode::size(150)->generate(Request::url('/validacao/').$qrcode); !!}
+					<p>Verifique autenticidade do documento</p>
+				</div>
+
+			</footer>
+		</div>
+	</div>
 
 </body>
 <!--   Core JS Files   -->
@@ -206,19 +213,19 @@
 <!-- demo init -->
 <script src="{{ asset('js/plugins/demo.js')}}"></script>
 <script type="text/javascript">
-  $('body').ready(function () {
-    var data = new Date();
+	{{-- $('body').ready(function () {
+		var data = new Date();
 
-    // var semana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"][data.getDay()];
+		// var semana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"][data.getDay()];
 
-    var dia = data.getDate();
+		var dia = data.getDate();
 
-    var mes = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"][data.getMonth()];
+		var mes = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"][data.getMonth()];
 
-    var ano = data.getFullYear();
+		var ano = data.getFullYear();
 
-    $('.date-print').html(`Emissão: ${dia} de ${mes} de ${ano}`);
+		$('.date-print').html(`Emissão: ${dia} de ${mes} de ${ano}`);
 
-  })
+	}) --}}
 </script>
 </html>
