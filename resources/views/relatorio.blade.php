@@ -30,7 +30,7 @@
 	<div id="relatorio" class="card col-sm-11">
 		<div class=" card-header text-center d-flex flex-wrap">    
 			<div class="col-sm-12">
-				<img src="img/brasao.png">
+				<img src="{{ asset('img/brasao.png'}}">
 			</div>
 			<p class="col-sm-12 category text-center">
 				Estado do Rio de Janeiro <br>
