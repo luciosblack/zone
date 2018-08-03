@@ -150,7 +150,7 @@
 				<p class="date-print col-sm-12 text-right">Emissão: {!!$dt_validade!!}</p>
 				<p class="col-sm-12 text-right">Validade: 90 dias</p>
 				<div class="visible-print text-center" style="margin-left: 39%;">
-					{!! QrCode::size(150)->generate(Request::url('/validacao/').$qrcode); !!}
+					{!! QrCode::size(150)->generate(url('validacao').'/'.$qrcode); !!}
 					<p>Verifique autenticidade do documento</p>
 				</div>
 
