@@ -52,7 +52,7 @@ class ZonaController extends Controller
 		date_default_timezone_set('America/Sao_Paulo');
 	
 		//cria variável com a data da criação da consulta
-		$dt_validade = strftime(" %d de %B de %Y", strtotime( $consulta->created_at ));
+		$dt_validade = gmstrftime(" %d de %B de %Y", strtotime( $consulta->created_at ));
 
 
 		return view('relatorio', compact('logradouro', 'zona','qrcode','dt_validade'));
@@ -73,7 +73,7 @@ class ZonaController extends Controller
 		date_default_timezone_set('America/Sao_Paulo');
 	
 		//cria variável com a data da criação da consulta
-		$dt_validade = strftime(" %d de %B de %Y", strtotime( $consulta->created_at ));
+		$dt_validade = gmstrftime(" %d de %B de %Y", strtotime( $consulta->created_at ));
 
 		//coloca o qrcode na variável para enviar ao relatorio 
 		$qrcode = $validacao;

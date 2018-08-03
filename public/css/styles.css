@@ -246,5 +246,14 @@
 .logo360{
 	width: 70px; 
 	margin-top: -4px; 
-	margin-left: -35px;"
+	margin-left: -35px;
+}
+
+.texto-relatorio{
+	text-align: justify;
+	padding-bottom: 16px;
+}
+
+.docs:hover { 
+	background-color: #a2abb3;
 }
