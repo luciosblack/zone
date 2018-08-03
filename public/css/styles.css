@@ -15,6 +15,10 @@
    text-align: center !important;
 }
 /**************************************/
+/* Margem definada como 0 para não alterar a posição da MAIN-PANEL*/
+#formRelatorio {
+	margin: 0 !important;
+}
 
 #map {
   overflow: unset !important;
@@ -42,10 +46,6 @@
 	left: 0!important;
 }
 
-/*#top-bar {
-	display: none!important;
-}*/
-
 .back-branco {
 	background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 31%, rgba(250,250,250,1) 100%);
 }
@@ -55,6 +55,10 @@
 	color: #FFF;
 }
 
+.card-footer p {
+	font-size: 0.750rem !important;
+	margin-bottom: 0.2rem !important;
+}
 
 .cinza {
 	background: linear-gradient(60deg, #dbdbdb, #ffffff);
@@ -120,6 +124,21 @@
 }
 
 @media screen and (min-width: 991px) {
+	
+	#pac-input {
+		background-color: rgba(76,175,80,0.3);
+		font-family: Roboto;
+		font-size: 15px;
+		font-weight: 300;
+		margin-left: 12px;
+		padding: 0 11px 0 13px;
+		text-overflow: ellipsis;
+		border-radius: 5px;
+	}
+
+	#pac-input:focus {
+		border-color: #4d90fe;
+	}
 	
 	.footer a {
 		font-size: 0.7em !important;
@@ -198,20 +217,6 @@
 	font-family: Roboto;
 	font-size: 13px;
 	font-weight: 300;
-}
-
-#pac-input {
-	background-color: #fff;
-	font-family: Roboto;
-	font-size: 15px;
-	font-weight: 300;
-	margin-left: 12px;
-	padding: 0 11px 0 13px;
-	text-overflow: ellipsis;
-}
-
-#pac-input:focus {
-	border-color: #4d90fe;
 }
 
 #title {

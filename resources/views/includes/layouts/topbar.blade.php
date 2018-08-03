@@ -15,7 +15,11 @@
  	<div class="collapse navbar-collapse justify-content-end">
     <div class="navbar-form">
       <div id="pac-card" class="input-group has-success">
-        <input id="pac-input" type="text" class="form-control" placeholder="Informe o endereço">
+      	<button id="pac-button" type="submit" class="btn btn-success btn-round btn-link btn-just-icon">
+        	<i class="material-icons">search</i>
+          <div class="ripple-container"></div>
+        </button>
+        <input id="pac-input" type="text" class="form-control" placeholder="Clique aqui e digite o endereço">
       </div>
     </div>
     <ul class="navbar-nav">
@@ -30,5 +34,13 @@
 <!-- End Navbar -->
 
 @push('scripts')
+
+<script type="text/javascript">
+	$("#pac-button").click(function(e) {
+
+		$("#pac-input").trigger("select");
+
+	});
+</script>
 
 @endpush

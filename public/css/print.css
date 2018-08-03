@@ -17,10 +17,6 @@ img {
 	margin-bottom: 0 !important;
 }
 
-.card-footer.text-muted p {
-	font-size: 0.700rem;
-}
-
 .card-body h4.card-header {
 	font-weight: bold;
 	font-size: 0.800rem;
@@ -30,9 +26,10 @@ img {
 	margin-left:8.33333333%;
 }
 
-.date-print {
+.card-footer p.date-print {
 	color: #333333;
-	font-size: 0.900rem !important;
+	font-size: 1rem !important;
+	margin: 5px;
 }
 
 .printBG-neutral {
