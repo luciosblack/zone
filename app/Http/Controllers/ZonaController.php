@@ -48,8 +48,8 @@ class ZonaController extends Controller
 		$qrcode = $consulta->validador;
 
 		//configura o formato de dat e hora
-		setlocale(LC_ALL, 'pt_BR');
-		date_default_timezone_set('America/Sao_Paulo');
+		setlocale(LC_ALL, 'pt_BR.UTF-8');
+		//date_default_timezone_set('America/Sao_Paulo');
 	
 		//cria variável com a data da criação da consulta
 		$dt_validade = gmstrftime(" %d de %B de %Y", strtotime( $consulta->created_at ));
