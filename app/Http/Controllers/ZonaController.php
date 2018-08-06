@@ -47,14 +47,11 @@ class ZonaController extends Controller
 		  
 		$qrcode = $consulta->validador;
 
-		//configura o formato de dat e hora
-		setlocale(LC_ALL, 'pt_BR.UTF-8', 'Portuguese_Brazil.1252');
-		date_default_timezone_set('America/Sao_Paulo');
-	
+		
 		//cria variável com a data da criação da consulta
-		$dt_validade = gmstrftime(" %d de %B de %Y", strtotime( $consulta->created_at ));
+		//$dt_validade = gmstrftime(" %d de %B de %Y", strtotime( $consulta->created_at ));
 
-		//dd($dt_validade);
+		$dt_validade = $this->dataEmPortugues(strtotime($consulta->created_at), false);
 
 		return view('relatorio', compact('logradouro', 'zona','qrcode','dt_validade'));
 	}
@@ -69,12 +66,9 @@ class ZonaController extends Controller
 		// Buscar a zona pelo id
 		$zona = json_decode($consulta->valores);
 
-		//configura o formato de dat e hora
-		setlocale(LC_ALL, "pt_BR", "pt_BR.iso-8859-1", "pt_BR.utf-8", "portuguese");
-		date_default_timezone_set('America/Sao_Paulo');
-	
+		
 		//cria variável com a data da criação da consulta
-		$dt_validade = gmstrftime(" %d de %B de %Y", strtotime( $consulta->created_at ));
+		$dt_validade = $this->dataEmPortugues(strtotime($consulta->created_at), false);
 
 		//coloca o qrcode na variável para enviar ao relatorio 
 		$qrcode = $validacao;
@@ -82,6 +76,67 @@ class ZonaController extends Controller
 		return view('relatorio', compact('logradouro', 'zona','qrcode','dt_validade'));
 		
 	}
-	 
+
+	function dataEmPortugues ($timestamp, $hours = FALSE) {
+
+		$dia_num = date("w", $timestamp);// Dia da semana.
+
+		if($dia_num == '0'){
+			$dia_nome = "Domingo";
+		}elseif($dia_num == '1'){
+			$dia_nome = "Segunda";
+		}elseif($dia_num == '2'){
+			$dia_nome = "Terça";
+		}elseif($dia_num == '3'){
+			$dia_nome = "Quarta";
+		}elseif($dia_num == '4'){
+			$dia_nome = "Quinta";
+		}elseif($dia_num == '5'){
+			$dia_nome = "Sexta";
+		}else{
+			$dia_nome = "Sábado";
+		}
+
+		$dia_mes = date("d", $timestamp);// Dia do mês
+
+		$mes_num = date("m", $timestamp);// Nome do mês
+
+		if($mes_num == '01'){
+			$mes_nome = "Janeiro";
+		}elseif($mes_num == '02'){
+			$mes_nome = "Fevereiro";
+		}elseif($mes_num == '03'){
+			$mes_nome = "Março";
+		}elseif($mes_num == '04'){
+			$mes_nome = "Abril";
+		}elseif($mes_num == '05'){
+			$mes_nome = "Maio";
+		}elseif($mes_num == '06'){
+			$mes_nome = "Junho";
+		}elseif($mes_num == '07'){
+			$mes_nome = "Julho";
+		}elseif($mes_num == '08'){
+			$mes_nome = "Agosto";
+		}elseif($mes_num == '09'){
+			$mes_nome = "Setembro";
+		}elseif($mes_num == '10'){
+			$mes_nome = "Outubro";
+		}elseif($mes_num == '11'){
+			$mes_nome = "Novembro";
+		}else{
+			$mes_nome = "Dezembro";
+		}
+		$ano = date("Y", $timestamp);// Ano
+
+		date_default_timezone_set("America/Sao_Paulo"); // Set time-zone
+		$hora = date ("H:i", $timestamp);
+
+		if ($hours) {
+			return /* $dia_nome.", ". */$dia_mes." de ".$mes_nome." de ".$ano." - ".$hora;
+		}
+		else {
+			return /* $dia_nome.", ". */$dia_mes." de ".$mes_nome." de ".$ano;
+		}
+	}
 	 
 }
