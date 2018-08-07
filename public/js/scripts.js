@@ -18,11 +18,9 @@ function initMap() {
 		mapTypeControl: false,
 		scrollwheel: true, //we disable de scroll over the map, it is a really annoing when you scroll through page
 		styles: [{"featureType":"water","stylers":[{"saturation":43},{"lightness":-11},{"hue":"#0088ff"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"hue":"#ff0000"},{"saturation":-100},{"lightness":99}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"color":"#808080"},{"lightness":54}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ece2d9"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#ccdca1"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#767676"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","stylers":[{"visibility":"off"}]},{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#b8cb93"}]},{"featureType":"poi.park","stylers":[{"visibility":"on"}]},{"featureType":"poi.sports_complex","stylers":[{"visibility":"on"}]},{"featureType":"poi.medical","stylers":[{"visibility":"on"}]},{"featureType":"poi.business","stylers":[{"visibility":"simplified"}]}],
-		
 
 	});
 
-	
 
 	//////////////////////////////////Camada de Zoneamento
 
@@ -30,7 +28,7 @@ function initMap() {
 	var geoXmlAAC_I = new geoXML3.parser({
 		map: map,
 		zoom: false,
-		polygonOptions: { clickable: false },
+		polygonOptions: {clickable: false,},
 		createPolygon: addPolygonAAC,
 	});
 
@@ -185,7 +183,7 @@ function initMap() {
 			alert("O endereço buscado não é em Mesquita.");
 			return;
 		}
-		
+
 		////////////////////////////////////////////////// Preencher a variável "area_pesquisada"
 		if (google.maps.geometry.poly.containsLocation(place.geometry.location, pol_AAC_I)){
 			area_pesquisada = "AAC_I";
@@ -212,7 +210,6 @@ function initMap() {
 			area_pesquisada = "MACROZONA_rural";
 		}
 
-		
 
 		// If the place has a geometry, then present it on a map.
 		if (place.geometry.viewport) {
@@ -239,9 +236,7 @@ function initMap() {
 		infowindow.open(map, marker);
 	});
 
-	
 	//autocomplete.setTypes('address');
 	autocomplete.setOptions({ strictBounds: false });
 
 }
-    
