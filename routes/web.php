@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::post('/relatorio',           'ZonaController@imprimirRelatorio');
-Route::get('/validacao/{codigo}',  'ZonaController@imprimirValidacao');
+Route::post('/relatorio', 'ZonaController@imprimirRelatorio');
 
 Route::get('buscaZona', 'ZonaController@buscaZona');

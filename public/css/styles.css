@@ -38,6 +38,21 @@
 	margin-bottom: 0 !important;
 }
 
+#pac-input {
+	background-color: rgba(76,175,80,0.3);
+	font-family: Roboto;
+	font-size: 15px;
+	font-weight: 300;
+	margin-left: 12px;
+	padding: 0 11px 0 13px;
+	text-overflow: ellipsis;
+	border-radius: 5px;
+}
+
+#pac-input:focus {
+	border-color: #4d90fe;
+}
+
 #sigla_zona {
 	margin-bottom: 0 !important;
 }
@@ -124,21 +139,6 @@
 }
 
 @media screen and (min-width: 991px) {
-	
-	#pac-input {
-		background-color: rgba(76,175,80,0.3);
-		font-family: Roboto;
-		font-size: 15px;
-		font-weight: 300;
-		margin-left: 12px;
-		padding: 0 11px 0 13px;
-		text-overflow: ellipsis;
-		border-radius: 5px;
-	}
-
-	#pac-input:focus {
-		border-color: #4d90fe;
-	}
 	
 	.footer a {
 		font-size: 0.7em !important;
@@ -246,14 +246,5 @@
 .logo360{
 	width: 70px; 
 	margin-top: -4px; 
-	margin-left: -35px;
-}
-
-.texto-relatorio{
-	text-align: justify;
-	padding-bottom: 16px;
-}
-
-.docs:hover { 
-	background-color: #a2abb3;
+	margin-left: -35px;"
 }
