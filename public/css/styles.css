@@ -15,6 +15,11 @@
    text-align: center !important;
 }
 /**************************************/
+
+nav.navbar.navbar-expand-lg.navbar-absolute.fixed-top.back-branco {
+	justify-content: space-around;	
+}
+
 /* Margem definada como 0 para não alterar a posição da MAIN-PANEL*/
 #formRelatorio {
 	margin: 0 !important;
@@ -103,6 +108,10 @@
 	display: none!important;
 }
 
+.logo360{
+	width: 7em; 
+}
+
 .main-panel {
 	height: 100vh;
 	overflow: hidden;
@@ -125,6 +134,19 @@
 
 @media screen and (max-width: 991px) {
 
+	nav.navbar.navbar-expand-lg.navbar-absolute.fixed-top.back-branco a {
+		padding: 5px 15px;
+	}
+
+	.flex-item:nth-of-type(1) {
+		order: 2;
+		flex-wrap: wrap;
+	}
+
+	.flex-item:nth-of-type(2) {
+		order: 1;
+	}
+
 	.footer a {
 		font-size: 0.6em !important;
 	}
@@ -139,7 +161,7 @@
 }
 
 @media screen and (min-width: 991px) {
-	
+
 	.footer a {
 		font-size: 0.7em !important;
 	}
@@ -225,26 +247,4 @@
 	font-size: 25px;
 	font-weight: 500;
 	padding: 6px 12px;
-}
-
-::-webkit-input-placeholder {
-   color: red;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-   color: red;  
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-   color: red;  
-}
-
-:-ms-input-placeholder {  
-   color: red;  
-}
-
-.logo360{
-	width: 70px; 
-	margin-top: -4px; 
-	margin-left: -35px;"
 }
