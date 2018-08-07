@@ -5,14 +5,7 @@
 		<img class="logo" src="{{ asset("img/Logotipo-Horizontal-Colorido-PMM.png") }}">
  	</a>
 
- 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="navbar-toggler-icon icon-bar"></span>
-		<span class="navbar-toggler-icon icon-bar"></span>
-		<span class="navbar-toggler-icon icon-bar"></span>
- 	</button>
-
- 	<div class="collapse navbar-collapse justify-content-end">
+ 	<div class="col-sm-6">
     <div class="navbar-form">
       <div id="pac-card" class="input-group has-success">
       	<button id="pac-button" type="submit" class="btn btn-success btn-round btn-link btn-just-icon">
