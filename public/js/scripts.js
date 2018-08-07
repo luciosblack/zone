@@ -143,12 +143,16 @@ function initMap() {
 	var topBar = document.getElementById('top-bar');
 	var input = document.getElementById('pac-input');
 	var modalInfo = document.getElementById('modalInfo');
+	
 	//var types = document.getElementById('type-selector');
 	//var strictBounds = document.getElementById('strict-bounds-selector');
 
 	map.controls[google.maps.ControlPosition.TOP_CENTER].push(topBar);
 
-	var autocomplete = new google.maps.places.Autocomplete(input);
+	
+	var autocomplete = new google.maps.places.Autocomplete(input, {
+		componentRestrictions: { country: 'br'}
+	});
 
 	// Bind the map's bounds (viewport) property to the autocomplete object,
 	// so that the autocomplete requests use the current map bounds for the
@@ -166,11 +170,12 @@ function initMap() {
 		anchorPoint: new google.maps.Point(0, -29)
 	});
 
+	
 	autocomplete.addListener('place_changed', function() {
-
 		infowindow.close();
 		marker.setVisible(false);
 		var place = autocomplete.getPlace();
+		//console.log(place);
 
 		if (!place.geometry) {
 			// User entered the name of a Place that was not suggested and
