@@ -18,6 +18,8 @@
 
 nav.navbar.navbar-expand-lg.navbar-absolute.fixed-top.back-branco {
 	justify-content: space-around;	
+	padding-top: 0px;
+	padding-bottom: 0px;
 }
 
 /* Margem definada como 0 para não alterar a posição da MAIN-PANEL*/
@@ -152,7 +154,7 @@ nav.navbar.navbar-expand-lg.navbar-absolute.fixed-top.back-branco {
 	}
 
 	.navbar a img.logo {
-		width: 10.3em;
+		width: 14.3em;
 	}
 
 	.off-tablet {
@@ -247,4 +249,9 @@ nav.navbar.navbar-expand-lg.navbar-absolute.fixed-top.back-branco {
 	font-size: 25px;
 	font-weight: 500;
 	padding: 6px 12px;
+}
+
+.retira_padding_verticais{
+	padding-bottom: 0px !important;
+	padding-top: 0px !important;
 }
