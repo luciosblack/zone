@@ -24,7 +24,7 @@ class ZonaController extends Controller
 		$logradouro = $request->campo_pesquisa;
 		$id_zona = $request->id_zona;
 		// Buscar a zona pelo id
-		$zona = Zona::find($id_zona)->with('usos')->first();
+		$zona = Zona::find($id_zona);
 		//converte os dados da ZONA pesquisados em JSON
 		$dados_zona = json_encode($zona, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 			
