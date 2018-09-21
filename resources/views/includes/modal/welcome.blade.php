@@ -12,8 +12,8 @@
 	        Bem vindo, campo para informação sobre o serviço do portal
 	      </div>
 	      <div class="">
-	      	<button class="ajax btn btn-success btn-sm btn-link" data-toggle="modal" data-target="#modalTermos">Termo de uso</button>	      	
-	        <button id="entrar" type="button" class="btn btn-success btn-sm d-flex btn-link float-right" data-dismiss="modal">Entrar</button>
+	      	{{-- <button class="ajax btn btn-success btn-sm btn-link" data-toggle="modal" data-target="#modalTermos">Termo de uso</button> --}}	      	
+	        <button id="entrar" type="button" class="btn btn-success btn-sm d-flex btn-link float-right" data-dismiss="modal">Continuar</button>
 	      </div>
 	    </div>
     </div>
